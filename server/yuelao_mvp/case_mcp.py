@@ -21,6 +21,7 @@ except ImportError as error:
 
 CASE_WIDGET_URI = "ui://yuelao/evidence.html"
 CASE_WIDGET = Path(__file__).with_name("case_widget.html")
+FEEDBACK_ORIGIN = "https://yuelao-trial-feedback.arthurqiu50.chatgpt.site"
 
 
 class RelationshipCase(BaseModel):
@@ -59,8 +60,8 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
     if CASE_WIDGET.is_file():
         @server.resource(CASE_WIDGET_URI, name="evidence-card", title="相似连麦证据卡",
                          mime_type="text/html;profile=mcp-app",
-                         meta={"ui": {"csp": {"redirectDomains": ["https://www.bilibili.com"]}, "prefersBorder": True},
-                               "openai/widgetCSP": {"redirect_domains": ["https://www.bilibili.com"]}})
+                         meta={"ui": {"csp": {"redirectDomains": ["https://www.bilibili.com", FEEDBACK_ORIGIN]}, "prefersBorder": True},
+                               "openai/widgetCSP": {"redirect_domains": ["https://www.bilibili.com", FEEDBACK_ORIGIN]}})
         def case_widget() -> str:
             return CASE_WIDGET.read_text(encoding="utf-8")
 

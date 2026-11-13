@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>月老试聊反馈</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #2b2130;
+      background: #f2eef5;
+      --paper: #fffcff;
+      --ink: #2b2130;
+      --muted: #615568;
+      --plum: #542756;
+      --line: #c6b8cc;
+      --wash: #f2e8f4;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; line-height: 1.55; }
+    main { max-width: 640px; margin: auto; padding: clamp(20px, 6vw, 56px) clamp(14px, 4vw, 24px); }
+    article { padding: clamp(18px, 5vw, 36px); background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--plum); border-radius: 4px 4px 18px 18px; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.35rem); line-height: 1.18; margin-bottom: 8px; }
+    h2 { font-size: 1.3rem; }
+    fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+    legend { padding: 0; margin-bottom: 8px; font-weight: 700; }
+    .field { margin-top: 18px; }
+    .field-label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .hint, .optional { color: var(--muted); font-size: .88rem; font-weight: 400; }
+    .hint { margin-top: 5px; }
+    .intro { margin-bottom: 18px; }
+    .context { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 12px; padding: 14px 0 16px; border-block: 1px solid var(--line); }
+    .context .field-label { font-size: .9rem; }
+    select, input[type="text"], textarea {
+      width: 100%; min-height: 44px; padding: 9px 10px; border: 1px solid var(--line);
+      border-radius: 7px; background: var(--paper); color: var(--ink); font: inherit;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    ::placeholder { color: #6b6070; opacity: 1; }
+    .choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+    .choice { position: relative; }
+    .choice input { position: absolute; width: 1px; height: 1px; padding: 0; clip-path: inset(50%); overflow: hidden; }
+    .choice span { display: grid; min-height: 50px; place-items: center; padding: 5px 3px; border: 1px solid var(--line); border-radius: 7px; font-size: .95rem; text-align: center; cursor: pointer; }
+    .choice input:checked + span { color: var(--plum); background: var(--wash); border-color: var(--plum); box-shadow: inset 0 0 0 1px var(--plum); font-weight: 700; }
+    :focus-visible, .choice input:focus-visible + span { outline: 2px solid var(--plum); outline-offset: 3px; }
+    .share { margin-top: 18px; padding: 10px 12px 12px; background: var(--wash); border-radius: 7px; }
+    .share-toggle { display: flex; align-items: center; gap: 8px; min-height: 30px; font-weight: 650; cursor: pointer; }
+    input[type="checkbox"] { inline-size: 17px; block-size: 17px; flex: 0 0 auto; accent-color: var(--plum); }
+    .share .field { margin-top: 10px; }
+    .share textarea { min-height: 105px; }
+    .comment-label { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    button { color: var(--plum); font: inherit; cursor: pointer; }
+    .secondary { min-height: 36px; padding: 4px 9px; background: transparent; border: 1px solid var(--line); border-radius: 7px; font-size: .87rem; }
+    .secondary[aria-pressed="true"] { background: var(--wash); border-color: var(--plum); }
+    .secondary:disabled { cursor: wait; opacity: .65; }
+    .primary { width: 100%; min-height: 48px; margin-top: 18px; padding: 9px 14px; border: 1px solid var(--plum); border-radius: 8px; background: var(--plum); color: white; font-weight: 700; }
+    .primary:disabled { cursor: wait; opacity: .7; }
+    .error { margin-top: 14px; color: #8e2731; }
+    .confirmation { padding: 22px 0 2px; border-top: 1px solid var(--line); }
+    .receipt { margin: 8px 0 16px; overflow-wrap: anywhere; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    @media (max-width: 340px) { .context { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header class="intro">
+        <h1>月老试聊反馈</h1>
+        <p>哪句接得像，哪句让你出戏？反馈会直接发给开发者。</p>
+      </header>
+      <noscript><p>请开启浏览器的 JavaScript，再提交反馈。</p></noscript>
+      <form id="feedback" action="/api/feedback" method="post" autocomplete="off" hidden>
+        <fieldset id="fields">
+          <legend class="visually-hidden">填写反馈</legend>
+          <div class="context">
+            <div>
+              <label class="field-label" for="host">试聊对象</label>
+              <select id="host" name="host">
+                <option value="unknown">不确定</option>
+                <option value="aoye">鳌烨</option>
+                <option value="tianshu">天书定位</option>
+                <option value="laolin">老林</option>
+                <option value="tong">童锦程</option>
+                <option value="ququ">曲曲</option>
+                <option value="jiege">杰哥相亲</option>
+                <option value="fan">梵公子</option>
+                <option value="guolu">郭律</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="version">试聊版本 <span class="optional">选填</span></label>
+              <input id="version" name="version" type="text" maxlength="40" placeholder="不确定可留空" autocapitalize="off" spellcheck="false">
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>刚才聊得像吗？ <span class="optional">必选</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="verdict" value="like" required><span>像真人</span></label>
+              <label class="choice"><input type="radio" name="verdict" value="unreal" required><span>有点假</span></label>
+              <label class="choice"><input type="radio" name="verdict" value="mixed" required><span>有的像</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label class="field-label" for="reason">最影响你感受的是？ <span class="optional">选填</span></label>
+            <select id="reason" name="reason">
+              <option value="">选择一个原因</option>
+              <option value="opening">开场</option>
+              <option value="question">追问</option>
+              <option value="tone">说话口吻</option>
+              <option value="judgment">判断或建议</option>
+              <option value="source">推荐的原片</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="turn">哪一句？ <span class="optional">选填</span></label>
+            <input id="turn" name="turn" type="text" maxlength="100" placeholder="比如：第 2 轮，它开始问我条件">
+          </div>
+          <div class="field">
+            <div class="comment-label">
+              <label class="field-label" for="comment">为什么？你会怎么接？ <span class="optional">选填</span></label>
+              <button id="dictate" class="secondary" type="button" aria-pressed="false" aria-describedby="dictation-hint" hidden>语音输入</button>
+            </div>
+            <textarea id="comment" name="comment" maxlength="1000" placeholder="说说哪里接住了你，或者你希望它下一句怎么说。"></textarea>
+            <p id="dictation-hint" class="hint" hidden>语音由浏览器的识别服务处理。发给开发者的是你确认提交的文字。</p>
+            <p id="dictation-status" class="hint" role="status" hidden></p>
+          </div>
+          <div class="share">
+            <label class="share-toggle" for="share-excerpt">
+              <input type="checkbox" id="share-excerpt" name="share_excerpt" aria-controls="excerpt-field">
+              附上一小段对话 <span class="optional">选填</span>
+            </label>
+            <p class="hint">页面不会读取聊天记录。勾选后，可以自己粘贴并编辑想分享的几句。</p>
+            <div id="excerpt-field" class="field" hidden>
+              <label class="field-label" for="excerpt">你愿意分享的片段</label>
+              <textarea id="excerpt" name="excerpt" maxlength="1500" placeholder="仅粘贴你愿意分享的几句，可先删掉姓名、联系方式等信息。" disabled></textarea>
+            </div>
+          </div>
+        </fieldset>
+        <p id="error" class="error" role="alert" hidden></p>
+        <p id="sending" class="visually-hidden" role="status"></p>
+        <button id="send" class="primary" type="submit">提交反馈</button>
+        <p class="hint"><a href="/privacy">反馈隐私</a></p>
+      </form>
+      <section id="confirmation" class="confirmation" tabindex="-1" aria-labelledby="confirmation-title" hidden>
+        <h2 id="confirmation-title">反馈已送达</h2>
+        <p class="receipt">回执编号 <code id="receipt"></code></p>
+        <button id="another" class="secondary" type="button">再写一条</button>
+      </section>
+    </article>
+  </main>
+  <script>
+    const byId = (id) => document.getElementById(id);
+    const form = byId("feedback");
+    const fields = byId("fields");
+    const host = byId("host");
+    const version = byId("version");
+    const comment = byId("comment");
+    const shareExcerpt = byId("share-excerpt");
+    const excerpt = byId("excerpt");
+    const send = byId("send");
+    const error = byId("error");
+    const confirmation = byId("confirmation");
+    const dictate = byId("dictate");
+    const dictationStatus = byId("dictation-status");
+
+    const codes = new Map([
+      ["ay", "aoye"], ["ts", "tianshu"], ["ll", "laolin"], ["tj", "tong"],
+      ["qq", "ququ"], ["jg", "jiege"], ["fg", "fan"], ["gl", "guolu"],
+    ]);
+    const hosts = new Set(Array.from(host.options, (option) => option.value));
+    const versionPattern = /^(?:unknown|v?\d+(?:\.\d+){1,3}(?:-[a-z0-9.-]+)?)$/i;
+    const params = new URLSearchParams(window.location.search);
+    const hostParam = (params.get("host") || "").toLowerCase();
+    const chosenHost = codes.get(hostParam) || hostParam;
+    const initialHost = hosts.has(chosenHost) ? chosenHost : "unknown";
+    const versionParam = params.get("version") || "";
+    const initialVersion = versionPattern.test(versionParam) ? versionParam : "";
+    let previousBody = "";
+    let requestId = "";
+    let submitting = false;
+
+    function updateExcerpt() {
+      byId("excerpt-field").hidden = !shareExcerpt.checked;
+      excerpt.disabled = !shareExcerpt.checked;
+    }
+
+    function showError(message) {
+      error.textContent = message;
+      error.hidden = !message;
+    }
+
+    function showDictationStatus(message) {
+      dictationStatus.textContent = message;
+      dictationStatus.hidden = !message;
+    }
+
+    function resetForm(selectedHost, selectedVersion) {
+      form.reset();
+      host.value = selectedHost;
+      version.value = selectedVersion;
+      shareExcerpt.checked = false;
+      updateExcerpt();
+      showError("");
+      showDictationStatus("");
+      send.textContent = "提交反馈";
+      previousBody = "";
+      requestId = "";
+    }
+
+    function newRequestId() {
+      if (crypto.randomUUID) return crypto.randomUUID();
+      const bytes = crypto.getRandomValues(new Uint8Array(16));
+      bytes[6] = (bytes[6] & 15) | 64;
+      bytes[8] = (bytes[8] & 63) | 128;
+      const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+      return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+    }
+
+    shareExcerpt.addEventListener("change", updateExcerpt);
+    version.addEventListener("input", () => version.setCustomValidity(""));
+
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition;
+    let cancelDictation = () => {};
+    if (Recognition) {
+      try {
+        recognition = new Recognition();
+        recognition.lang = "zh-CN";
+        recognition.continuous = false;
+        recognition.interimResults = false;
+      } catch {
+        recognition = undefined;
+      }
+    }
+    if (recognition) {
+      const finishDictation = () => {
+        dictate.textContent = "语音输入";
+        dictate.setAttribute("aria-pressed", "false");
+      };
+      cancelDictation = () => {
+        if (dictate.getAttribute("aria-pressed") !== "true") return;
+        try { recognition.abort(); } catch { /* The recognition session may have already ended. */ }
+        finishDictation();
+        showDictationStatus("");
+      };
+      dictate.hidden = false;
+      byId("dictation-hint").hidden = false;
+      dictate.addEventListener("click", () => {
+        if (dictate.getAttribute("aria-pressed") === "true") {
+          try { recognition.stop(); } catch { finishDictation(); }
+          return;
+        }
+        try {
+          recognition.start();
+          dictate.textContent = "停止听写";
+          dictate.setAttribute("aria-pressed", "true");
+          showDictationStatus("正在听写…");
+        } catch {
+          showDictationStatus("暂时无法启动语音识别，可以继续手动填写。");
+        }
+      });
+      recognition.onresult = (event) => {
+        if (submitting || form.hidden) return;
+        const words = Array.from(event.results).slice(event.resultIndex)
+          .map((result) => result[0].transcript.trim()).filter(Boolean).join(" ");
+        if (!words) return;
+        const currentText = comment.value.trimEnd();
+        const nextText = currentText ? `${currentText}\n${words}` : words;
+        comment.value = nextText.slice(0, comment.maxLength);
+        showDictationStatus(nextText.length > comment.maxLength ? "已到留言长度上限，可以编辑后再提交。" : "已转成文字，可以编辑后再提交。");
+      };
+      recognition.onerror = () => {
+        if (!submitting && !form.hidden) showDictationStatus("语音识别暂不可用，可以继续手动填写。");
+      };
+      recognition.onend = () => {
+        finishDictation();
+        if (dictationStatus.textContent === "正在听写…") showDictationStatus("");
+      };
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (submitting) return;
+      const versionText = version.value.trim();
+      if (versionText && (versionText.length > 40 || !versionPattern.test(versionText))) {
+        version.setCustomValidity("请填写类似 0.2.7 的版本号，或留空。");
+        version.reportValidity();
+        return;
+      }
+      const data = new FormData(form);
+      const payload = {
+        host: host.value,
+        version: versionText || "unknown",
+        verdict: data.get("verdict"),
+        share_excerpt: shareExcerpt.checked,
+      };
+      for (const key of ["reason", "turn", "comment"]) {
+        const value = String(data.get(key) || "").trim();
+        if (value) payload[key] = value;
+      }
+      if (shareExcerpt.checked && excerpt.value.trim()) payload.excerpt = excerpt.value.trim();
+
+      submitting = true;
+      fields.disabled = true;
+      send.disabled = true;
+      send.textContent = "正在提交…";
+      byId("sending").textContent = "正在提交反馈";
+      showError("");
+      cancelDictation();
+
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 15000);
+      let errorMessage = "暂未收到提交确认。填写的内容还在，可以重试。";
+      try {
+        const body = JSON.stringify(payload);
+        if (body !== previousBody) {
+          requestId = newRequestId();
+          previousBody = body;
+        }
+        const response = await fetch("/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ ...payload, request_id: requestId }),
+          signal: controller.signal,
+        });
+        if (response.status === 429) errorMessage = "提交次数较多，等一会儿再重试。填写的内容还在。";
+        if (!response.ok) throw new Error("Feedback request failed");
+        const result = await response.json();
+        if (typeof result.receipt_id !== "string" || !result.receipt_id) throw new Error("Receipt missing");
+        byId("receipt").textContent = result.receipt_id;
+        form.hidden = true;
+        confirmation.hidden = false;
+        confirmation.focus();
+      } catch {
+        showError(errorMessage);
+        send.textContent = "重试提交";
+      } finally {
+        window.clearTimeout(timeout);
+        submitting = false;
+        fields.disabled = false;
+        send.disabled = false;
+        byId("sending").textContent = "";
+        if (!form.hidden) send.focus();
+      }
+    });
+
+    byId("another").addEventListener("click", () => {
+      resetForm(host.value, version.value);
+      confirmation.hidden = true;
+      form.hidden = false;
+      form.querySelector('input[name="verdict"]').focus();
+    });
+
+    resetForm(initialHost, initialVersion);
+    form.hidden = false;
+  </script>
+</body>
+</html>

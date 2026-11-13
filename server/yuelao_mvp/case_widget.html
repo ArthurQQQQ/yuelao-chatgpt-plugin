@@ -64,6 +64,7 @@
         <div class="actions">
           <a id="watch" target="_blank" rel="noopener noreferrer" hidden>打开原片</a>
           <button id="next" type="button" hidden>下一条</button>
+          <a id="feedback" href="https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.8" target="_blank" rel="noopener noreferrer">给作者反馈</a>
           <span id="position" class="quiet" aria-live="polite" hidden></span>
         </div>
         <p id="link-status" class="quiet" role="status" hidden></p>
@@ -77,6 +78,13 @@
     const evidence = byId("evidence");
     const watch = byId("watch");
     const next = byId("next");
+    const feedback = byId("feedback");
+    const hostIds = new Map(Object.entries({
+      "鳌烨": "aoye", "天书定位": "tianshu", "老林的情感研究室": "laolin",
+      "童锦程": "tong", "曲曲": "ququ", "杰哥相亲": "jiege",
+      "梵公子社会学": "fan", "郭延娇": "guolu",
+    }));
+    const feedbackBase = feedback.href;
     const position = byId("position");
     const linkStatus = byId("link-status");
 
@@ -137,6 +145,11 @@
       }
 
       byId("host").textContent = item.host || "连麦案例";
+      const feedbackUrl = new URL(feedbackBase);
+      const hostId = hostIds.get(item.host);
+      if (hostId) feedbackUrl.searchParams.set("host", hostId);
+      feedback.href = feedbackUrl.href;
+      delete feedback.dataset.fallback;
       byId("title").textContent = item.title || "相似连麦";
       byId("situation").textContent = item.situation || item.summary || "";
       byId("move").textContent = item.move || "";
@@ -198,6 +211,22 @@
         if (watch.getAttribute("href") !== url.href) return;
         directLink = true;
         linkStatus.textContent = "请再点一次链接，在浏览器里打开原片。";
+        linkStatus.hidden = false;
+      }
+    });
+
+    feedback.addEventListener("click", async (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey ||
+          !bridgeConnected || feedback.dataset.fallback) return;
+      event.preventDefault();
+      const url = feedback.href;
+      try {
+        const response = await request("ui/open-link", { url });
+        if (response?.isError) throw new Error("Link could not be opened in host");
+      } catch {
+        if (feedback.href !== url) return;
+        feedback.dataset.fallback = "true";
+        linkStatus.textContent = "请再点一次链接，在浏览器里打开反馈页。";
         linkStatus.hidden = false;
       }
     });

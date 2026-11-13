@@ -1,0 +1,204 @@
+{
+  "ran_at": "2026-11-13T04:57:44.040551+00:00",
+  "plugin_version": "0.2.7",
+  "method": "Separate ephemeral Codex session per case. Rendered actual plugin entry and host guidance before original-link section. Positioning guide for aoye and tianshu. No web, shell, MCP, source URLs, case summaries, future caller turns, or reference answers available.",
+  "results": [
+    {
+      "host": "aoye",
+      "user_text": "我在北京做互联网产品，家里父母都是老师。我读书和工作占了很多精力，单身挺久，最近才想认真开始一段亲密关系，也会考虑婚姻。我一直没什么实感，想知道大概能找到什么样的对象。",
+      "prompt_sha256": "26358babf9753c288afde58dab1436e21d1224cf1f3f310cd73dff4b95096266",
+      "reply": "你在北京做互联网产品，爸妈都是老师。之前读书和工作占了大部分精力，单身挺久，最近才腾出心思认真谈一段，也会考虑结婚。咱们先抓一个会影响你能跟谁长期走下去的条件：你是打算长期留在北京，还是遇到合适的人，也愿意商量以后在哪儿定居？",
+      "audit": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22977,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.24,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "host": "tianshu",
+      "user_text": "我想认真找对象，跟人接触时有什么需要注意的？我经常和别人见过一次，就没有第二次了。",
+      "prompt_sha256": "f647f187aa80dbab1f362a9daa231005e605d41d7edbc579256941e693d8e5e9",
+      "reply": "你想认真找对象，也留意到不少接触见了一次就停了。判断有没有继续发展的可能，可以先看双方愿不愿意把下次见面约具体。就拿最近一次你还想继续了解的人来说，你们见完以后，有人提过下次什么时候见吗？",
+      "audit": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22947,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 4.74,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "host": "laolin",
+      "user_text": "女朋友不小心把东西扔了，没找回来，挺心疼。我过去帮她找，后来她请我吃东西，又嫌当天花多了，心情还是不好。我哄了她，也一度觉得是我没处理好，还开玩笑想让她开心。她说她就是心疼钱，跟我没关系。我想知道这事怎么安慰才算共情到位。",
+      "prompt_sha256": "7d372ba44e2bce33b455576f1badc6a71871f6a80a61bd8d98a69b6db5bdf996",
+      "reply": "她已经把难受的地方告诉你了：东西没找回来，本来就心疼，那天又觉得花多了。她也说了这跟你没关系，你可以把「是不是我没处理好」先放下。\n\n当时可以顺着她的话说一句：「东西没找回来已经够心疼了，今天又觉得花多了，搁一块儿确实挺郁闷的。我陪你待会儿。」\n\n说完留点空，她想吐槽就听。你过去帮她找，已经是在陪她了。她后来心情还是不好，也可以让这份心疼多待一会儿。",
+      "audit": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22674,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.72,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "host": "jiege",
+      "user_text": "我想找个男生，结婚后我主内，工资由我来管。那我应该找一个什么收入水平的男生，才比较可能有这样的分工？",
+      "prompt_sha256": "371f013e410d1eb09c38ebbe629b3abf6b523a3f76c77606686d1025435ccafd",
+      "reply": "你想婚后主内，由你管工资。收入够不够，要看一份工资能不能撑起你们想过的日子。对方愿不愿意这么分工，得看你们对花钱和存钱的安排能不能谈拢。你说的「工资由你管」，具体是你负责日常开支、储蓄和投资两个人商量，还是这几项都希望由你决定？",
+      "audit": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22624,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 102,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.86,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "host": "guolu",
+      "user_text": "我不打算生孩子，相亲刚认识的时候，怎么才能先知道对方是不是也不想生育？",
+      "prompt_sha256": "bea5318bb9df489845ac338dafc13f9a0255b437d05459a65c428d9f67841abb",
+      "reply": "你已经明确自己不打算生孩子。相亲刚认识，聊到对未来生活的打算时，就可以直接说：“我对生育这件事想得比较清楚，以后不打算要孩子。你自己是怎么想的？”\n\n如果对方说“顺其自然”或“以后再说”，可以再问一句：“你是还没想好，还是也确定以后不想要孩子？” 这样能听到对方自己的立场。对方如果还没想好，你就按“目前还没想好”来判断。",
+      "audit": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22607,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.97,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    }
+  ],
+  "comparison_references_added_after_inference": [
+    {
+      "host": "aoye",
+      "name": "鳌烨",
+      "source_id": "bili-BV1LTd5BgEQw",
+      "timestamp_url": "https://www.bilibili.com/video/BV1LTd5BgEQw/?t=48",
+      "reference_window_seconds": [
+        48.98,
+        71.56
+      ],
+      "split": "holdout",
+      "local_media_hash_verified": true,
+      "evidence_status": "machine_asr_pending_review",
+      "theme": "先扩大接触，再定位",
+      "original_move": "把「能找到什么样的」往后放，先多接触几个人，借不同的实际相处认识自己。",
+      "plugin_move": "先复述已知条件，再问是否打算长期留在北京。",
+      "assessment": "明显不同。原片把缺少实际接触放在最前。插件用定居作为通用追问，这个问题没有接住来访者刚恢复择偶、缺少实际参照的难处。"
+    },
+    {
+      "host": "tianshu",
+      "name": "天书定位",
+      "source_id": "bili-BV1iG8b6QEJr",
+      "timestamp_url": "https://www.bilibili.com/video/BV1iG8b6QEJr/?t=154",
+      "reference_window_seconds": [
+        154.36,
+        156.14
+      ],
+      "split": "development",
+      "local_media_hash_verified": true,
+      "evidence_status": "machine_asr_pending_review",
+      "theme": "追问谁不想继续",
+      "original_move": "先问是自己不想再约，还是对方不想约。",
+      "plugin_move": "请来访者挑一次自己还想继续了解的见面，问是否有人提出具体的下次。",
+      "assessment": "部分相近。都把抽象判断拉回续约，但插件先限定用户有意愿，漏掉原片首先要区分的「我也不想约」和「只有对方不想约」。"
+    },
+    {
+      "host": "laolin",
+      "name": "老林",
+      "source_id": "bili-BV1GQsKefE6Z",
+      "timestamp_url": "https://www.bilibili.com/video/BV1GQsKefE6Z/?t=191",
+      "reference_window_seconds": [
+        191.06,
+        251.06
+      ],
+      "split": "development",
+      "local_media_hash_verified": true,
+      "evidence_status": "machine_asr_pending_review",
+      "theme": "从自责转向共情",
+      "original_move": "先质疑替对方背责任能否让她感到被理解，再引导把损失带来的心疼、无奈说出来。",
+      "plugin_move": "先放下自责，再示范接住「没找回来、又花多了」的具体回应。",
+      "assessment": "主要动作相近。原片先用反问让来访者检查自己做过什么，插件直接给了自然可用的话。自动转写以约 30 秒为一段，窗口无法精确到每次换人。"
+    },
+    {
+      "host": "jiege",
+      "name": "杰哥相亲",
+      "source_id": "bili-BV1wtwLzTEa4",
+      "timestamp_url": "https://www.bilibili.com/video/BV1wtwLzTEa4/?t=28",
+      "reference_window_seconds": [
+        28.0,
+        44.0
+      ],
+      "split": "development",
+      "local_media_hash_verified": true,
+      "evidence_status": "machine_asr_pending_review",
+      "theme": "追问管钱的用途",
+      "original_move": "先问为什么想管工资，来访者说想管之后，再追问是家用还是投资。",
+      "plugin_move": "把收入门槛转向生活预算和分工，询问用户想管日常开支，还是连储蓄、投资的决定也一起管。",
+      "assessment": "方向相近，起手不同。原片先问动机，然后问用途。插件把两步并成范围和决定权，更完整，也少了原片短促、一步一问的节奏。"
+    },
+    {
+      "host": "guolu",
+      "name": "郭律",
+      "source_id": "bili-BV13Zxe6QEv6",
+      "timestamp_url": "https://www.bilibili.com/video/BV13Zxe6QEv6/?t=168",
+      "reference_window_seconds": [
+        168.1,
+        178.1
+      ],
+      "split": "development",
+      "local_media_hash_verified": true,
+      "evidence_status": "machine_asr_pending_review",
+      "theme": "刚接触就直接问生育计划",
+      "original_move": "建议初次接触直接问对方想不想要孩子，理由是尽早确认可以减少时间耗费。",
+      "plugin_move": "给出先表明自己不打算生育、再问对方想法的一句话，另外示范怎样追问含糊回答。",
+      "assessment": "主要动作相同。插件把只问对方扩为双边表态，也多给了一轮假设追问。回放局部只考查生育计划的沟通，省略了该场其他健康背景。"
+    }
+  ]
+}

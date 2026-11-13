@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "failures": [],
+  "archive": {
+    "scripts": 501,
+    "hashes_verified": 501,
+    "with_source_url": 491,
+    "with_media_timing": 45
+  },
+  "research": {
+    "indexed_scripts": 499,
+    "matching_token_rows": 499,
+    "excluded_holdouts": 2
+  },
+  "serving": {
+    "video_sources": 25,
+    "cards": 26,
+    "cards_by_host": {
+      "老林的情感研究室": 5,
+      "郭延娇": 1,
+      "鳌烨": 10,
+      "天书定位": 6,
+      "曲曲": 1,
+      "梵公子社会学": 1,
+      "童锦程": 1,
+      "杰哥相亲": 1
+    },
+    "valid_source_anchors": 26,
+    "cards_recalled_with_own_text_top2": 26
+  },
+  "development_regression": {
+    "fixtures": 12,
+    "passed": 12,
+    "checks": [
+      {
+        "id": "relocate",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "limits",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "new-start",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "dating-effort",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "code-owner",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "household-finances",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "messages",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "comfort",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "no-contact",
+        "checks": {
+          "top1_source": true,
+          "top2_source": true,
+          "top1_action_window": true
+        }
+      },
+      {
+        "id": "host-mismatch",
+        "checks": {
+          "correct_empty": true
+        }
+      },
+      {
+        "id": "off-topic",
+        "checks": {
+          "correct_empty": true
+        }
+      },
+      {
+        "id": "unindexed-host",
+        "checks": {
+          "correct_empty": true
+        }
+      }
+    ]
+  },
+  "scope": "Local data integrity and retrieval smoke checks. No hosted deployment, live-video playback, speaker verification, or held-out quality evaluation.",
+  "maintenance_note": "进展点04同场回放前，以当前桌面归档和服务索引执行全量完整性核验。"
+}
