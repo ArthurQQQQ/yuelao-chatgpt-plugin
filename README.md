@@ -16,6 +16,8 @@ ChatGPT 插件原型 · 5 种聊法 · 3 道场景题 · 22 条原片 / 23 张�
 
 **同一件事，换个人接下一句，你愿不愿意继续讲？** 这是我们做月老连麦时想回答的问题。我们把这些接话动作做成可以选择、比较和切换的 AI 聊法。对话里需要例子时，插件会查案例库，给出相似片段和能跳到对应秒数的原片链接。
 
+我觉得月老连麦值得看，是因为来访者从一团乱麻里讲出具体处境，主播追问一句，常常就能把问题说得更清楚。我们想评价的是这句有没有接住事实、听到新细节会不会改判，以及推荐的原片能不能对上当下的问题。 [进展点 01](docs/checkpoint-01.md)
+
 ### 四个象限，五种聊法
 
 横轴看这一轮更关心**感受与互动**，还是**条件与投入**。纵轴看更适合**先厘清**，还是**给下一步**。图里的位置是对产品聊法的示意。测试结果按当下选项计算，用户也可以直接点名或中途换人。
@@ -55,6 +57,8 @@ ChatGPT 插件原型 · 5 种聊法 · 3 道场景题 · 22 条原片 / 23 张�
 On Chinese-language livestreams, callers sometimes bring a real dating or relationship dilemma to a host for an on-air conversation known as *YueLao lianmai*. A caller might say, “We talk for hours in person, but I'm always the one who texts afterward.” One host asks who set the next date. Another asks what made the reply feel dismissive. A new detail can change how the host understands the situation. Short clips preserve those turns. [Lao Lin call](https://www.bilibili.com/video/BV1Yi421a7sj/?t=84) · [Tianshu call](https://www.bilibili.com/video/BV1XYW86vEEz/?t=284)
 
 **If someone responded differently to the same story, would you want to keep talking?** That's the question behind YueLao Live Calls. The plugin turns these approaches into AI conversation styles you can choose, compare, or switch between. When an example helps, it can retrieve a similar call and link to the relevant moment.
+
+What interests me about these live calls is how one well-placed question can make a messy situation easier to describe. We evaluate whether the reply picks up the facts, changes its judgment when new details arrive, and links to a clip that actually addresses the caller's question. [Checkpoint 01](docs/checkpoint-01.md)
 
 ### Four quadrants, five styles
 
