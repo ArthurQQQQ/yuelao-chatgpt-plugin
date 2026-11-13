@@ -20,7 +20,21 @@ from .pipeline import media_valid, read_json
 DEFAULT_DB = MVP / "data/relationship-cases.sqlite3"
 DEPLOY_SNAPSHOT_VERSION = 1
 COMPACT_CASES = MVP / "config/compact-cases.json"
-HOSTS = {"aoye": "鳌烨", "tianshu": "天书定位", "laolin": "老林的情感研究室", "ququ": "曲曲", "tong": "童锦程"}
+HOSTS = {
+    "aoye": "鳌烨",
+    "tianshu": "天书定位",
+    "laolin": "老林的情感研究室",
+    "ququ": "曲曲",
+    "tong": "童锦程",
+    "jiege": "杰哥相亲",
+    "fan": "梵公子社会学",
+}
+HOST_ALIASES = {
+    **HOSTS,
+    "杰哥": HOSTS["jiege"],
+    "樊公子": HOSTS["fan"],
+    "梵公子": HOSTS["fan"],
+}
 PUBLIC_SAMPLES = MVP / "data/public-source-samples"
 SAMPLE_CARDS = MVP / "config/public-sample-cards.json"
 REVIEW_STATUS = "machine_asr_pending_review"
@@ -163,7 +177,7 @@ def search_cases(db: Path, query: str, *, host: str | None = None, limit: int = 
     query_terms = set(terms(query.strip()[:350]))
     if len(query_terms) < 2 or limit <= 0:
         return []
-    host = HOSTS.get(host, host)
+    host = HOST_ALIASES.get(host, host)
     expression = " OR ".join(f'"{token}"' for token in sorted(query_terms))
     with closing(sqlite3.connect(db.resolve().as_uri() + "?mode=ro", uri=True)) as connection:
         connection.row_factory = sqlite3.Row
@@ -223,7 +237,7 @@ def search_compact_cases(db: Path, query: str, *, host: str | None = None,
             JOIN clips AS c ON c.source_id = p.source_id
             WHERE compact_terms MATCH :query AND (:host IS NULL OR c.host = :host)
             ORDER BY rank, p.id
-        """, {"query": expression, "host": HOSTS.get(host, host)}).fetchall()
+        """, {"query": expression, "host": HOST_ALIASES.get(host, host)}).fetchall()
     results, seen = [], set()
     for row in options:
         evidence = " ".join(row[key] for key in ("situation", "move", "tags"))

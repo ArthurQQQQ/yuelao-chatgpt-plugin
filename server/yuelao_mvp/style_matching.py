@@ -1,10 +1,13 @@
 """Select a conversation approach from optional, session-specific preferences."""
 
 from dataclasses import dataclass
+from typing import Literal, get_args
 
 
 TOPIC_HOSTS = dict(zip("ABCDE", ("aoye", "tianshu", "laolin", "tong", "ququ")))
 MOVE_HOSTS = dict(zip("ABCDE", ("laolin", "aoye", "tianshu", "tong", "ququ")))
+SelectableHost = Literal["aoye", "tianshu", "laolin", "tong", "ququ", "jiege", "fan"]
+SELECTABLE_HOSTS = frozenset(get_args(SelectableHost))
 TONES = {"A": "gentle", "B": "direct", "C": "adaptive"}
 RELATIONSHIP_HOSTS = {"A": "laolin", "B": "ququ", "C": "tong"}
 TRADEOFF_HOSTS = {"A": "aoye", "B": "tianshu", "C": "laolin"}
@@ -38,7 +41,7 @@ def match_style(
     """Prefer the requested next move over the topic, unless the user names a host."""
     tone_preference = _answer(TONES, tone) or "adaptive"
     if selected_host is not None:
-        if selected_host not in TOPIC_HOSTS.values():
+        if selected_host not in SELECTABLE_HOSTS:
             raise ValueError(f"Unknown host: {selected_host}")
         return StyleMatch(selected_host, tone_preference)
 

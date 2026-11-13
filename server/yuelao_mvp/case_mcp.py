@@ -9,7 +9,7 @@ import sqlite3
 from typing import Annotated, Literal
 
 from .case_rag import DEFAULT_DB, REVIEW_STATUS, search_relationship_cases as lookup_cases, time_link
-from .style_matching import match_scenario, match_style
+from .style_matching import SelectableHost, match_scenario, match_style
 
 try:
     from mcp.server.mcpserver import MCPServer
@@ -69,7 +69,7 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
     @server.tool(
         title="按三题推荐月老聊法",
         description=("按用户选的三道场景题推荐本轮聊法。relationship、tradeoff、followup 为 A–C，跳过传空。"
-                     "最高分并列时返回 tied，用户选定后用 tie_break。已点名用 selected_host。"
+                     "最高分并列时返回 tied，用户选定后用 tie_break。已点名用 selected_host。jiege（杰哥相亲）和 fan（梵公子社会学）支持点名试用。"
                      "只在接续旧版问法时用 topic、first_move 和 tone。"),
         annotations=ToolAnnotations(
             read_only_hint=True, destructive_hint=False, idempotent_hint=True, open_world_hint=False,
@@ -79,7 +79,7 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
         topic: Literal["A", "B", "C", "D", "E"] | None = None,
         first_move: Literal["A", "B", "C", "D", "E"] | None = None,
         tone: Literal["A", "B", "C"] | None = None,
-        selected_host: Literal["aoye", "tianshu", "laolin", "tong", "ququ"] | None = None,
+        selected_host: SelectableHost | None = None,
         relationship: Literal["A", "B", "C"] | None = None,
         tradeoff: Literal["A", "B", "C"] | None = None,
         followup: Literal["A", "B", "C"] | None = None,
@@ -98,7 +98,7 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
             "在用户要找相似案例，或已明确的婚恋判断需要案例对照时查询一次。"
             "用一句不含身份信息的情境和要核对的动作，返回场景、主播动作及同一时段的原片链接。"
             "纯倾诉、只要一句回应或明确不看视频时直接对话。"
-            "用户明确选了主播时，用 host 保持来源一致。可用 aoye、tianshu、laolin、ququ、tong 或中文名。"
+            "用户明确选了主播时，用 host 保持来源一致。可用 aoye、tianshu、laolin、ququ、tong、jiege、fan 或中文名。"
             "没有匹配时返回空列表。案例摘要用于辅助判断，引用主播原话前请核对原片。"
         ),
         annotations=ToolAnnotations(
