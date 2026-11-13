@@ -1,0 +1,125 @@
+{
+  "transport": "MCP Streamable HTTP from extracted deployment bundle, loopback",
+  "health": "ok",
+  "tools": [
+    "match_conversation_style",
+    "search_relationship_cases",
+    "show_relationship_case"
+  ],
+  "resource": "ui://yuelao/evidence.html",
+  "fixtures": [
+    {
+      "id": "relocate",
+      "results": [
+        [
+          "bili-BV1TW9FBjEvp",
+          "https://www.bilibili.com/video/BV1TW9FBjEvp/?t=41"
+        ]
+      ]
+    },
+    {
+      "id": "limits",
+      "results": [
+        [
+          "bili-BV1qdEL6REVT",
+          "https://www.bilibili.com/video/BV1qdEL6REVT/?t=68"
+        ]
+      ]
+    },
+    {
+      "id": "new-start",
+      "results": [
+        [
+          "bili-BV1J99MBoEnW",
+          "https://www.bilibili.com/video/BV1J99MBoEnW/?t=80"
+        ]
+      ]
+    },
+    {
+      "id": "dating-effort",
+      "results": [
+        [
+          "bili-BV1XYW86vEEz",
+          "https://www.bilibili.com/video/BV1XYW86vEEz/?t=284"
+        ],
+        [
+          "bili-BV1MAWn6NEVp",
+          "https://www.bilibili.com/video/BV1MAWn6NEVp/?t=140"
+        ]
+      ]
+    },
+    {
+      "id": "code-owner",
+      "results": [
+        [
+          "bili-BV1WM826EE4H",
+          "https://www.bilibili.com/video/BV1WM826EE4H/?t=238"
+        ]
+      ]
+    },
+    {
+      "id": "household-finances",
+      "results": [
+        [
+          "bili-BV1e4W86zEmX",
+          "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104"
+        ]
+      ]
+    },
+    {
+      "id": "messages",
+      "results": [
+        [
+          "bili-BV1Yi421a7sj",
+          "https://www.bilibili.com/video/BV1Yi421a7sj/?t=84"
+        ]
+      ]
+    },
+    {
+      "id": "comfort",
+      "results": [
+        [
+          "bili-BV1GQsKefE6Z",
+          "https://www.bilibili.com/video/BV1GQsKefE6Z/?t=191"
+        ]
+      ]
+    },
+    {
+      "id": "no-contact",
+      "results": [
+        [
+          "bili-BV1hxpCesEYg",
+          "https://www.bilibili.com/video/BV1hxpCesEYg/?t=496"
+        ]
+      ]
+    },
+    {
+      "id": "host-mismatch",
+      "results": []
+    },
+    {
+      "id": "off-topic",
+      "results": []
+    },
+    {
+      "id": "unindexed-host",
+      "results": []
+    }
+  ],
+  "example_card": {
+    "source_id": "bili-BV1e4W86zEmX",
+    "title": "有小bug的A10少爷，颜值要求live house前五就行？",
+    "host": "天书定位",
+    "url": "https://www.bilibili.com/video/BV1e4W86zEmX/",
+    "timestamp_url": "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104",
+    "start_seconds": 104.0,
+    "end_seconds": 160.0,
+    "summary": "担心双方家境差异会导致婚后消费和投资争执。先把伴侣条件、期望的生活水平问具体，再看条件叠加后的取舍。",
+    "situation": "担心双方家境差异会导致婚后消费和投资争执。",
+    "move": "先把伴侣条件、期望的生活水平问具体，再看条件叠加后的取舍。",
+    "review_status": "machine_asr_pending_review",
+    "caveat": "这是案例摘要。引述说话人、原话或分数前，请按时间点核对原片。"
+  },
+  "invalid_time_rejected": true,
+  "quiz_host": "laolin"
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>相似连麦</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: light-dark(#211b19, #f5ece5);
+      background: transparent;
+      --panel: light-dark(#fffaf6, #29221f);
+      --border: light-dark(#e9ded6, #534641);
+      --muted: light-dark(#675a55, #c9bab2);
+      --accent: light-dark(#8b3c2e, #f5a992);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    main { padding: 1px; }
+    article {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: clamp(14px, 3vw, 22px);
+    }
+    h2 { font-size: 18px; line-height: 1.45; margin: 0 0 10px; overflow-wrap: anywhere; }
+    p { margin: 0; line-height: 1.6; overflow-wrap: anywhere; }
+    .meta { color: var(--accent); font-size: 13px; font-weight: 650; margin-bottom: 5px; }
+    dl { display: grid; gap: 8px; margin: 12px 0; }
+    dl div { display: grid; grid-template-columns: 4em 1fr; column-gap: 8px; }
+    dt { font-size: 14px; font-weight: 650; line-height: 1.65; }
+    dd { margin: 0; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+    .quiet { color: var(--muted); font-size: 13px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 14px; }
+    a { color: var(--accent); font-size: 14px; font-weight: 650; text-underline-offset: 3px; }
+    button {
+      font: inherit;
+      font-size: 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: inherit;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    #link-status { margin-top: 8px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main id="widget" aria-label="相似连麦">
+    <article>
+      <p id="status" class="quiet" role="status">正在读取连麦案例…</p>
+      <section id="evidence" aria-labelledby="title" hidden>
+        <p id="host" class="meta"></p>
+        <h2 id="title"></h2>
+        <dl>
+          <div id="situation-row"><dt>相似情境</dt><dd id="situation"></dd></div>
+          <div id="move-row"><dt>主播接法</dt><dd id="move"></dd></div>
+        </dl>
+        <p id="caveat" class="quiet"></p>
+        <div class="actions">
+          <a id="watch" target="_blank" rel="noopener noreferrer" hidden>打开原片</a>
+          <button id="next" type="button" hidden>下一条</button>
+          <span id="position" class="quiet" aria-live="polite" hidden></span>
+        </div>
+        <p id="link-status" class="quiet" role="status" hidden></p>
+      </section>
+    </article>
+  </main>
+  <script type="module">
+    const byId = (id) => document.getElementById(id);
+    const widget = byId("widget");
+    const status = byId("status");
+    const evidence = byId("evidence");
+    const watch = byId("watch");
+    const next = byId("next");
+    const position = byId("position");
+    const linkStatus = byId("link-status");
+
+    let cases = [];
+    let index = 0;
+    let bridgeConnected = false;
+    let directLink = false;
+    let rpcId = 0;
+    const pending = new Map();
+
+    function send(method, params) {
+      window.parent.postMessage({ jsonrpc: "2.0", method, params }, "*");
+    }
+
+    function request(method, params) {
+      return new Promise((resolve, reject) => {
+        const id = ++rpcId;
+        const timeout = setTimeout(() => {
+          pending.delete(id);
+          reject(new Error("MCP Apps request timed out"));
+        }, 2000);
+        pending.set(id, { resolve, reject, timeout });
+        window.parent.postMessage({ jsonrpc: "2.0", id, method, params }, "*");
+      });
+    }
+
+    function caseLink(value) {
+      if (typeof value !== "string") return null;
+      try {
+        const url = new URL(value);
+        if (url.protocol !== "https:" || url.port || url.username || url.password ||
+            !["www.bilibili.com", "bilibili.com"].includes(url.hostname) ||
+            !/^\/video\/BV[A-Za-z0-9]{10}\/?$/.test(url.pathname)) return null;
+        // Only keep the playback time and optional part number.
+        const safe = new URL(url.pathname, "https://www.bilibili.com");
+        for (const name of ["t", "p"]) {
+          const field = url.searchParams.get(name);
+          if (field && /^\d{1,7}$/.test(field)) safe.searchParams.set(name, field);
+        }
+        return safe;
+      } catch {
+        return null;
+      }
+    }
+
+    function displayTime(value) {
+      const seconds = Math.floor(value);
+      return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+    }
+
+    function render() {
+      const item = cases[index];
+      evidence.hidden = !item;
+      status.hidden = Boolean(item);
+      if (!item) {
+        status.textContent = "没有足够相似的连麦片段。";
+        return;
+      }
+
+      byId("host").textContent = item.host || "连麦案例";
+      byId("title").textContent = item.title || "相似连麦";
+      byId("situation").textContent = item.situation || item.summary || "";
+      byId("move").textContent = item.move || "";
+      byId("situation-row").hidden = !(item.situation || item.summary);
+      byId("move-row").hidden = !item.move;
+      byId("caveat").textContent = item.caveat || "摘要和时间点来自案例库。";
+
+      const url = caseLink(item.timestamp_url);
+      const time = url?.searchParams.get("t");
+      watch.hidden = !url;
+      if (url) watch.href = url.href;
+      else watch.removeAttribute("href");
+      watch.textContent = time ? `从 ${displayTime(Number(time))} 看原片` : "打开原片";
+      directLink = false;
+      linkStatus.hidden = true;
+      next.hidden = position.hidden = cases.length < 2;
+      position.textContent = `${index + 1} / ${cases.length}`;
+    }
+
+    function update(response) {
+      const items = response?.structuredContent?.cases;
+      if (!Array.isArray(items)) return;
+      cases = items.filter((item) => item && typeof item === "object").slice(0, 3);
+      index = 0;
+      render();
+    }
+
+    window.addEventListener("message", (event) => {
+      if (event.source !== window.parent) return;
+      const message = event.data;
+      if (message?.jsonrpc !== "2.0") return;
+      if (message.method === "ui/notifications/tool-result") {
+        update(message.params);
+        return;
+      }
+      const entry = pending.get(message.id);
+      if (!entry) return;
+      pending.delete(message.id);
+      clearTimeout(entry.timeout);
+      if (message.error) entry.reject(message.error);
+      else entry.resolve(message.result);
+    });
+
+    next.addEventListener("click", () => {
+      if (!cases.length) return;
+      index = (index + 1) % cases.length;
+      render();
+    });
+
+    watch.addEventListener("click", async (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || directLink || !bridgeConnected) return;
+      const url = caseLink(watch.getAttribute("href"));
+      if (!url) return;
+      event.preventDefault();
+      try {
+        const response = await request("ui/open-link", { url: url.href });
+        if (response?.isError) throw new Error("Link could not be opened in host");
+      } catch {
+        if (watch.getAttribute("href") !== url.href) return;
+        directLink = true;
+        linkStatus.textContent = "请再点一次链接，在浏览器里打开原片。";
+        linkStatus.hidden = false;
+      }
+    });
+
+    async function initialize() {
+      if (window.parent === window) {
+        status.textContent = "在 ChatGPT 中查找连麦时，这里会显示结果。";
+        return;
+      }
+      try {
+        await request("ui/initialize", {
+          appInfo: { name: "yuelao-case-widget", version: "1.0.0" },
+          appCapabilities: {},
+          protocolVersion: "2026-01-26",
+        });
+        bridgeConnected = true;
+        send("ui/notifications/initialized", {});
+        if (typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(() => {
+            send("ui/notifications/size-changed", { height: Math.ceil(widget.getBoundingClientRect().height) });
+          }).observe(widget);
+        }
+      } catch {
+        if (!cases.length) status.textContent = "当前无法读取连麦案例。";
+      }
+    }
+
+    initialize();
+  </script>
+</body>
+</html>

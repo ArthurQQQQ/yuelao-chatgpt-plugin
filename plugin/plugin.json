@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "yuelao-cases",
+  "version": "0.2.5",
+  "description": "Chinese relationship conversations with selectable approaches and source-linked case retrieval.",
+  "author": {"name": "Arthur"},
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "月老连麦 · 案例库",
+        "shortDescription": "选一种适合当下的聊法，按情境查相似原片",
+        "defaultPrompt": ["我适合哪种月老聊法？给我做个三题小测。", "我想用天书的聊法，看看这段关系值不值得继续。"],
+        "category": "Communication"
+      }
+    }
+  }
+}
