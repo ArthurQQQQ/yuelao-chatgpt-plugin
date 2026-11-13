@@ -2,9 +2,17 @@
 
 **把一段关系讲清楚，选一种聊法，必要时看一段相似连麦。**
 
-ChatGPT 插件原型 · 8 种可选聊法 · 3 道场景题 · 25 条原片 / 26 张案例卡
+ChatGPT 插件原型 · **v0.2.9** · **8 种聊法** · **3 道场景题** · **29 条原片 / 37 张案例卡**
 
-[中文](#中文) · [English](#english)
+[试聊反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.9) · [GitHub 版本与部署包](https://github.com/ArthurQQQQ/yuelao-chatgpt-plugin/releases/tag/v0.2.9) · [各主播案例](docs/rag-coverage.md) · [English](#english)
+
+## 从这里开始
+
+1. **选一个聊法。** 可以说「用天书帮我理一下谁在主动约」，也可以做 [三道场景题](plugin/skills/yuelao-case-chat/references/style-matching.md)。
+2. **用同一件事试两种接法。** 有具体情境时可以请求一段相似连麦。[五场原片对照](docs/replay-v0.2.7.md)
+3. **告诉作者哪一句像、哪一句出戏。** [给作者反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.9) · [作者收件箱](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/inbox)
+
+ChatGPT 账号内接入待实测。[本机运行与接入](#run-locally) · [28 位创作者名录](docs/creator-roster.md)
 
 ![首批五种月老聊法四象限。横轴从感受与互动到条件与投入，纵轴从先厘清到给下一步。TJ 左上，QQ 右上，LL 左下，TS 和 AY 右下。](assets/conversation-quadrants.png)
 
@@ -37,7 +45,7 @@ ChatGPT 插件原型 · 8 种可选聊法 · 3 道场景题 · 25 条原片 / 26
 
 ### 试聊反馈
 
-聊完可以点「给作者反馈」。选像不像、指出哪一句，愿意的话可以附上一小段自己选择的对话。打开网页即可提交，作者在收件箱看到反馈。 [试聊反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.8) · [五段原片对照](docs/replay-v0.2.7.md)
+聊完可以点「给作者反馈」。选像不像、指出哪一句，愿意的话可以附上一小段自己选择的对话。打开网页即可提交，作者在收件箱看到反馈。 [试聊反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.9) · [五段原片对照](docs/replay-v0.2.7.md)
 
 ### 场景题库与 MBTI / SBTI 启发
 
@@ -53,13 +61,15 @@ ChatGPT 插件原型 · 8 种可选聊法 · 3 道场景题 · 25 条原片 / 26
 
 ### 提示词、工具与案例库
 
-提示词决定怎样接话，用户补充新事实时可以改判。工具负责场景题匹配、查询案例和展示证据卡。RAG 优先找相同主播的短卡，必要时用索引里的词项补找候选。每张卡保存来访情境、接话动作和原片时码。仓库内有 **25 条原片记录和 26 张短卡**，转写和说话人归属待人工核听。完整逐字稿、音视频和私人对话保存在本机。 [MCP 服务](server/yuelao_mvp/case_mcp.py) · [HTTP 联调记录](docs/acceptance-v0.2.7.json) · [素材规模与提示词接法](docs/corpus-and-prompt.md)
+提示词决定怎样接话，用户补充新事实时可以改判。工具负责场景题匹配、查询案例和展示证据卡。RAG 优先找相同主播的短卡，必要时用索引里的词项补找候选。每张卡保存来访情境、接话动作和原片时码。仓库内有 **29 条原片记录和 37 张短卡**，转写和说话人归属待人工核听。完整逐字稿、音视频和私人对话保存在本机。 [MCP 服务](server/yuelao_mvp/case_mcp.py) · [HTTP 联调记录](docs/acceptance-v0.2.9.json) · [素材规模与提示词接法](docs/corpus-and-prompt.md)
 
-当前版本 **0.2.8** 已验证本机服务、八种聊法点名切换和新案例的证据卡调用。梵公子案例来自一段 17 秒的第三方片段，说话人和语气待核听。ChatGPT 账号内的注册和显示仍待实测。 [进展点 04](docs/checkpoint-04.md) · [本机启动与接入](#run-locally)
+当前版本 **0.2.9** 已验证本机服务、八种聊法点名和案例时码。原片说话人与语气待人工核听。 [进展点 05](docs/checkpoint-05.md) · [各主播案例](docs/rag-coverage.md)
 
 ## English
 
 **Tell your story, choose how you want to talk it through, and pull up a similar live call when it helps.**
+
+[Download the latest package](https://github.com/ArthurQQQQ/yuelao-chatgpt-plugin/releases/tag/v0.2.9) · [Browse case coverage](docs/rag-coverage.md) · [Leave trial feedback](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.9)
 
 ### Where it came from
 
@@ -88,7 +98,7 @@ Try “Talk through household expenses with Jie Ge” or “Switch to Fan Gongzi
 
 ### Trial feedback
 
-After a trial, rate how the conversation felt and point to the turn you would change. You can optionally attach an edited excerpt. The feedback page sends your submission to the author's inbox. [Leave feedback](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.8) · [Five source replays](docs/replay-v0.2.7.md)
+After a trial, rate how the conversation felt and point to the turn you would change. You can optionally attach an edited excerpt. The feedback page sends your submission to the author's inbox. [Leave feedback](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.2.9) · [Five source replays](docs/replay-v0.2.7.md)
 
 ### The question bank, inspired by MBTI and SBTI
 
@@ -104,7 +114,7 @@ You can skip questions, choose between two suggested responses if the scores tie
 
 ### Prompts, tools, and retrieval
 
-Prompts guide how the model responds and when it updates its view. The read-only MCP tools match a style, search for a case, and display a source card. Retrieval prioritizes the selected style's short cards and uses indexed terms to surface extra candidates when needed. This repository contains metadata for **25 source videos and 26 case cards**, with timecodes, short situations, and host actions. Transcription and speaker attribution still need human audio review. Full transcripts, source media, and private conversations are stored locally. [MCP service](server/yuelao_mvp/case_mcp.py) · [HTTP acceptance results](docs/acceptance-v0.2.7.json) · [Corpus and prompt integration](docs/corpus-and-prompt.md)
+Prompts guide how the model responds and when it updates its view. The read-only MCP tools match a style, search for a case, and display a source card. Retrieval prioritizes the selected style's short cards and uses indexed terms to surface extra candidates when needed. This repository contains metadata for **29 source videos and 37 case cards**, with timecodes, short situations, and host actions. Transcription and speaker attribution still need human audio review. Full transcripts, source media, and private conversations are stored locally. [MCP service](server/yuelao_mvp/case_mcp.py) · [HTTP acceptance results](docs/acceptance-v0.2.9.json) · [Corpus and prompt integration](docs/corpus-and-prompt.md)
 
 ## Run locally
 
@@ -118,4 +128,4 @@ python -m uvicorn yuelao_mvp.cloud_mcp:create_app --factory --host 127.0.0.1 --p
 
 本机健康检查为 `http://127.0.0.1:8080/healthz`，MCP 端点为 `http://127.0.0.1:8080/mcp`。私有试用可走 OpenAI Secure MCP Tunnel。部署时可用 `server/` 里的 Dockerfile，在 HTTPS 网关配置访问控制，将实际域名设为 `YUELAO_ALLOWED_HOSTS`。在 ChatGPT 添加自定义 MCP 后，将连接绑定到 [插件目录](plugin/)。
 
-Use `http://127.0.0.1:8080/healthz` to check the service and `http://127.0.0.1:8080/mcp` as the local MCP endpoint. For private testing, use OpenAI Secure MCP Tunnel. For hosted use, build the Dockerfile in `server/`, configure access control at the HTTPS gateway, and set `YUELAO_ALLOWED_HOSTS` to the serving hostname. Add the custom MCP server in ChatGPT and bind it to the [plugin skill](plugin/). Version **0.2.8** passed local HTTP checks for direct selection and evidence-card calls. The Fan Gongzi card points to a 17-second third-party clip pending speaker and audio review. ChatGPT account registration and in-chat rendering still need verification. [Connect to ChatGPT](https://developers.openai.com/plugins/deploy/connect-chatgpt) · [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)
+Use `http://127.0.0.1:8080/healthz` to check the service and `http://127.0.0.1:8080/mcp` as the local MCP endpoint. For private testing, use OpenAI Secure MCP Tunnel. For hosted use, build the Dockerfile in `server/`, configure access control at the HTTPS gateway, and set `YUELAO_ALLOWED_HOSTS` to the serving hostname. Add the custom MCP server in ChatGPT and bind it to the [plugin skill](plugin/). Version **0.2.9** passed local HTTP checks for direct selection and evidence-card calls. Speaker attribution and delivery in the source clips are pending human audio review. ChatGPT account registration and in-chat rendering still need verification. [Connect to ChatGPT](https://developers.openai.com/plugins/deploy/connect-chatgpt) · [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)

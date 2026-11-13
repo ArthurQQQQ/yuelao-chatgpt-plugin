@@ -1,0 +1,369 @@
+{
+  "version": "0.2.9",
+  "transport": "MCP Streamable HTTP on loopback",
+  "selectable_hosts": [
+    "aoye",
+    "tianshu",
+    "laolin",
+    "tong",
+    "ququ",
+    "jiege",
+    "fan",
+    "guolu"
+  ],
+  "previous_fixtures": 12,
+  "new_fixtures": 11,
+  "passed": 23,
+  "fixtures": [
+    {
+      "id": "relocate",
+      "host": "aoye",
+      "query": "人在国外，事业发展还行，要不要为了找对象搬回北京？想看一段类似连麦。",
+      "target": "bili-BV1TW9FBjEvp",
+      "window": [
+        40,
+        98
+      ],
+      "reason": "海外事业和回北京择偶的取舍。",
+      "results": [
+        {
+          "source_id": "bili-BV1TW9FBjEvp",
+          "start_seconds": 41.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1TW9FBjEvp/?t=41"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "host": "aoye",
+      "query": "想找本地工作稳定有房车的人，但最近几个都只想短期相处，想看看类似的择偶分析。",
+      "target": "bili-BV1qdEL6REVT",
+      "window": [
+        65,
+        160
+      ],
+      "reason": "核对实际候选与理想条件的差距。",
+      "results": [
+        {
+          "source_id": "bili-BV1qdEL6REVT",
+          "start_seconds": 68.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qdEL6REVT/?t=68"
+        }
+      ]
+    },
+    {
+      "id": "new-start",
+      "host": "aoye",
+      "query": "上一段婚姻结束后重新择偶，认识了一个人，怕以前的经历影响判断。",
+      "target": "bili-BV1J99MBoEnW",
+      "window": [
+        75,
+        113
+      ],
+      "reason": "先了解前段婚姻对现在判断的影响。",
+      "results": [
+        {
+          "source_id": "bili-BV1J99MBoEnW",
+          "start_seconds": 80.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1J99MBoEnW/?t=80"
+        }
+      ]
+    },
+    {
+      "id": "dating-effort",
+      "host": "tianshu",
+      "query": "相亲见面很聊得来，回去后一直是我约，他连个具体时间都不给。有没有聊过怎么判断双方投入的？",
+      "target": "bili-BV1XYW86vEEz",
+      "window": [
+        270,
+        339
+      ],
+      "reason": "对照对不同人实际发消息、约见的频率。",
+      "results": [
+        {
+          "source_id": "bili-BV1XYW86vEEz",
+          "start_seconds": 284.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1XYW86vEEz/?t=284"
+        },
+        {
+          "source_id": "bili-BV1MAWn6NEVp",
+          "start_seconds": 140.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1MAWn6NEVp/?t=140"
+        }
+      ]
+    },
+    {
+      "id": "code-owner",
+      "host": "tianshu",
+      "query": "天书那段提到 A12 邻居和 A7，两个分别说的是谁？",
+      "target": "bili-BV1WM826EE4H",
+      "window": [
+        235,
+        250
+      ],
+      "reason": "A7 候选档与 A12 邻居出现在同一段的不同话语中。",
+      "results": [
+        {
+          "source_id": "bili-BV1WM826EE4H",
+          "start_seconds": 238.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1WM826EE4H/?t=238"
+        }
+      ]
+    },
+    {
+      "id": "household-finances",
+      "host": "tianshu",
+      "query": "怕两边家庭经济差别太大，结婚后怎么花钱和投资都谈不拢，想看类似来访。",
+      "target": "bili-BV1e4W86zEmX",
+      "window": [
+        100,
+        160
+      ],
+      "reason": "对齐生活水平以及伴侣的家庭经济条件。",
+      "results": [
+        {
+          "source_id": "bili-BV1e4W86zEmX",
+          "start_seconds": 104.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104"
+        }
+      ]
+    },
+    {
+      "id": "messages",
+      "host": "laolin",
+      "query": "他换工作后总是很久才回，认真分享的东西也随便应付，慢慢不想跟他说了。找个相似连麦。",
+      "target": "bili-BV1Yi421a7sj",
+      "window": [
+        82,
+        128
+      ],
+      "reason": "区分等待与没被认真回应。",
+      "results": [
+        {
+          "source_id": "bili-BV1Yi421a7sj",
+          "start_seconds": 84.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1Yi421a7sj/?t=84"
+        }
+      ]
+    },
+    {
+      "id": "comfort",
+      "host": "laolin",
+      "query": "女朋友把东西弄丢了心疼，我跟着一起找但还是不知道怎么安慰。",
+      "target": "bili-BV1GQsKefE6Z",
+      "window": [
+        190,
+        251
+      ],
+      "reason": "区分共情和把责任揽到自己身上。",
+      "results": [
+        {
+          "source_id": "bili-BV1GQsKefE6Z",
+          "start_seconds": 191.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1GQsKefE6Z/?t=191"
+        }
+      ]
+    },
+    {
+      "id": "no-contact",
+      "host": "laolin",
+      "query": "快二十天没联系，我是不是该当这段关系已经结束？",
+      "target": "bili-BV1hxpCesEYg",
+      "window": [
+        495,
+        535
+      ],
+      "reason": "久未联系和关系结束的区别。",
+      "results": [
+        {
+          "source_id": "bili-BV1hxpCesEYg",
+          "start_seconds": 496.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1hxpCesEYg/?t=496"
+        }
+      ]
+    },
+    {
+      "id": "host-mismatch",
+      "host": "tianshu",
+      "query": "女朋友把东西弄丢了，我跟着一起找但不知道怎么安慰。",
+      "target": null,
+      "reason": "这批库里相应案例是老林，不能跨主播顶替。",
+      "results": []
+    },
+    {
+      "id": "off-topic",
+      "host": null,
+      "query": "春江花月夜背诵，哪句写江潮与明月？",
+      "target": null,
+      "reason": "无关问题。",
+      "results": []
+    },
+    {
+      "id": "unindexed-host",
+      "host": "ququ",
+      "query": "我们刚相亲，只有我主动约，他从来不定时间，有曲曲讲过这个的原片吗？",
+      "target": null,
+      "reason": "曲曲还没有可推荐的短卡。",
+      "results": []
+    },
+    {
+      "id": "v029-aoye-580",
+      "host": "aoye",
+      "query": "没去过单位工会的单身联谊，想试一次，怎样判断这个渠道适不适合我？",
+      "target": "bili-BV1qdEL6REVT",
+      "start": 580.22,
+      "results": [
+        {
+          "source_id": "bili-BV1qdEL6REVT",
+          "start_seconds": 580.22,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qdEL6REVT/?t=580"
+        }
+      ]
+    },
+    {
+      "id": "v029-aoye-244",
+      "host": "aoye",
+      "query": "从学生时代起我在关系里就常让步，工作后有了自己的想法却还是不敢表达不同意见。",
+      "target": "bili-BV1J99MBoEnW",
+      "start": 244.48,
+      "results": [
+        {
+          "source_id": "bili-BV1J99MBoEnW",
+          "start_seconds": 244.48,
+          "timestamp_url": "https://www.bilibili.com/video/BV1J99MBoEnW/?t=244"
+        }
+      ]
+    },
+    {
+      "id": "v029-tianshu-415",
+      "host": "tianshu",
+      "query": "父母一直催婚，我自己其实不太想结婚，还在纠结找年长还是年纪小的。",
+      "target": "bili-BV1XYW86vEEz",
+      "start": 415.5,
+      "results": [
+        {
+          "source_id": "bili-BV1XYW86vEEz",
+          "start_seconds": 415.5,
+          "timestamp_url": "https://www.bilibili.com/video/BV1XYW86vEEz/?t=415"
+        }
+      ]
+    },
+    {
+      "id": "v029-tianshu-95",
+      "host": "tianshu",
+      "query": "家里生意流水看着很高，但这两年才赚到钱，家里花销也多，怎么理解流水和实际积蓄的差别？",
+      "target": "bili-BV1MAWn6NEVp",
+      "start": 95.18,
+      "results": [
+        {
+          "source_id": "bili-BV1MAWn6NEVp",
+          "start_seconds": 95.18,
+          "timestamp_url": "https://www.bilibili.com/video/BV1MAWn6NEVp/?t=95"
+        }
+      ]
+    },
+    {
+      "id": "v029-laolin-179",
+      "host": "laolin",
+      "query": "网上说几招暧昧话术一定能让对方心动，这到底能不能靠套路？",
+      "target": "bili-BV13W421R7Zx",
+      "start": 179.5,
+      "results": [
+        {
+          "source_id": "bili-BV13W421R7Zx",
+          "start_seconds": 179.5,
+          "timestamp_url": "https://www.bilibili.com/video/BV13W421R7Zx/?t=179"
+        }
+      ]
+    },
+    {
+      "id": "v029-laolin-317",
+      "host": "laolin",
+      "query": "两个人都不打算结婚，也有现实限制，还想继续相处，怎么谈彼此的期待？",
+      "target": "bili-BV1Yi421a7sj",
+      "start": 317,
+      "results": [
+        {
+          "source_id": "bili-BV1Yi421a7sj",
+          "start_seconds": 317.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1Yi421a7sj/?t=317"
+        }
+      ]
+    },
+    {
+      "id": "v029-tong-0",
+      "host": "tong",
+      "query": "想退出暧昧，但只一起看过日出、拉过手，怎么先梳理实际进展？",
+      "target": "bili-BV1tpLwzgEKS",
+      "start": 0,
+      "results": [
+        {
+          "source_id": "bili-BV1tpLwzgEKS",
+          "start_seconds": 0.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1tpLwzgEKS/?t=0"
+        }
+      ]
+    },
+    {
+      "id": "v029-guolu-33",
+      "host": "guolu",
+      "query": "婆婆经常当面数落我，我们不同住但天天见，想看看类似婆媳关系的连麦。",
+      "target": "bili-BV1qmxe6bEug",
+      "start": 33.12,
+      "results": [
+        {
+          "source_id": "bili-BV1qmxe6bEug",
+          "start_seconds": 33.12,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qmxe6bEug/?t=33"
+        }
+      ]
+    },
+    {
+      "id": "v029-fan-165",
+      "host": "fan",
+      "query": "网上初次认识一个人，个人资料和照片的第一印象跟线下认识有什么不同？",
+      "target": "bili-BV1EdXsBiEfd",
+      "start": 165.84,
+      "results": [
+        {
+          "source_id": "bili-BV1EdXsBiEfd",
+          "start_seconds": 165.84,
+          "timestamp_url": "https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165"
+        }
+      ]
+    },
+    {
+      "id": "v029-ququ-261",
+      "host": "ququ",
+      "query": "第一次约会各自付账AA之后，对方没再主动约下次吃饭，怎么判断愿不愿继续见面？",
+      "target": "bili-BV1WQeCzNEau",
+      "start": 261.26,
+      "results": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "start_seconds": 261.26,
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261"
+        },
+        {
+          "source_id": "bili-BV1mnd1YHEq7",
+          "start_seconds": 272.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1mnd1YHEq7/?t=272"
+        }
+      ]
+    },
+    {
+      "id": "v029-jiege-94",
+      "host": "jiege",
+      "query": "相亲约会对方说我应该打车，我觉得坐地铁省钱，想看杰哥聊约会开支。",
+      "target": "bili-BV12L796CEd9",
+      "start": 94.94,
+      "results": [
+        {
+          "source_id": "bili-BV12L796CEd9",
+          "start_seconds": 94.94,
+          "timestamp_url": "https://www.bilibili.com/video/BV12L796CEd9/?t=94"
+        }
+      ]
+    }
+  ]
+}

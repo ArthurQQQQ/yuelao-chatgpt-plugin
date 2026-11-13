@@ -85,23 +85,43 @@ function escape(value) {
   })[char]);
 }
 
-async function inbox(request, env) {
+async function inbox(request, env, url) {
   const email = request.headers.get("oai-authenticated-user-email")?.toLowerCase();
   if (!env.OWNER_EMAIL || email !== env.OWNER_EMAIL.toLowerCase()) {
     return page('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>作者收件箱</title><p>请用站点作者的 ChatGPT 账户登录。</p><a href="/signin-with-chatgpt?returnTo=%2Finbox">登录</a> <a href="/">返回反馈页</a></html>', 403);
   }
+  const host = url.searchParams.get("host") || "";
+  const version = url.searchParams.get("version")?.trim() || "";
+  const receipt = url.searchParams.get("receipt")?.trim() || "";
+  if ((host && !knownHosts.has(host)) || version.length > 40 || receipt.length > 36) {
+    return page('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><p>请检查筛选条件。</p><a href="/inbox">返回收件箱</a></html>', 400);
+  }
   const { results } = await env.DB.prepare(
-    "SELECT created_at, host, version, verdict, reason, turn, comment, excerpt FROM feedback WHERE created_at >= strftime('%Y-%m-%dT%H:%M:%fZ','now','-90 days') ORDER BY created_at DESC LIMIT 100",
-  ).all();
+    "SELECT receipt_id, created_at, host, version, verdict, reason, turn, comment, excerpt FROM feedback WHERE created_at >= strftime('%Y-%m-%dT%H:%M:%fZ','now','-90 days') AND (?1 = '' OR host = ?1) AND (?2 = '' OR version = ?2) AND (?3 = '' OR receipt_id = ?3) ORDER BY created_at DESC LIMIT 100",
+  ).bind(host, version, receipt).all();
+  const hostLabels = {
+    aoye: "鳌烨", tianshu: "天书定位", laolin: "老林", tong: "童锦程", ququ: "曲曲",
+    jiege: "杰哥相亲", fan: "梵公子", guolu: "郭律", unknown: "未指定",
+  };
+  const verdictLabels = { like: "像真人", unreal: "有点假", mixed: "有的像" };
+  const reasonLabels = { opening: "开场", question: "追问", tone: "口吻", judgment: "判断", source: "原片", other: "其他" };
+  const options = Object.entries(hostLabels).map(([id, label]) =>
+    `<option value="${id}"${host === id ? " selected" : ""}>${label}</option>`).join("");
   const rows = results.map(row => {
-    const fields = [row.created_at, row.host, row.version, row.verdict, row.reason, row.turn, row.comment, row.excerpt];
+    const fields = [row.created_at, hostLabels[row.host], row.version, verdictLabels[row.verdict], reasonLabels[row.reason], row.turn, row.comment, row.excerpt, row.receipt_id];
     return "<tr>" + fields.map(field => "<td>" + escape(field) + "</td>").join("") + "</tr>";
   }).join("");
   return page(`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>月老 · 作者收件箱</title><style>body{font:16px/1.55 system-ui;margin:2rem;background:#faf6ef;color:#241914}div{overflow:auto}td,th{padding:.55rem;vertical-align:top;text-align:left;border-bottom:1px solid #d5bba9}td{white-space:pre-wrap;overflow-wrap:anywhere}table{width:100%;min-width:42rem}</style>
-  <h1>作者收件箱</h1><p>最近 90 天内的 100 条反馈 · <a href="/">返回反馈页</a></p>
-  <div><table><thead><tr><th>时间（UTC）</th><th>聊法</th><th>版本</th><th>评分</th><th>问题</th><th>哪一轮</th><th>建议</th><th>自愿附上的摘录</th></tr></thead>
-  <tbody>${rows || '<tr><td colspan="8">还没有反馈</td></tr>'}</tbody></table></div></html>`);
+  <title>月老 · 作者收件箱</title><style>body{font:16px/1.55 system-ui;margin:clamp(1rem,4vw,2rem);background:#faf6ef;color:#241914}div{overflow:auto}td,th{padding:.55rem;vertical-align:top;text-align:left;border-bottom:1px solid #d5bba9}td{white-space:pre-wrap;overflow-wrap:anywhere}table{width:100%;min-width:52rem}form{display:flex;gap:.7rem;flex-wrap:wrap;margin:1rem 0}input,select,button{font:inherit}input{max-width:12rem}</style>
+  <h1>作者收件箱</h1><p>最近 90 天 · 每次最多显示 100 条 · <a href="/">返回反馈页</a></p>
+  <form method="get" action="/inbox">
+    <label>聊法 <select name="host"><option value="">全部</option>${options}</select></label>
+    <label>版本 <input name="version" value="${escape(version)}" placeholder="例如 0.2.9" maxlength="40"></label>
+    <label>回执 <input name="receipt" value="${escape(receipt)}" maxlength="36"></label>
+    <button type="submit">筛选</button><a href="/inbox">清除</a>
+  </form>
+  <div><table><thead><tr><th>时间（UTC）</th><th>聊法</th><th>版本</th><th>评分</th><th>问题</th><th>哪一轮</th><th>建议</th><th>自愿附上的摘录</th><th>回执编号</th></tr></thead>
+  <tbody>${rows || '<tr><td colspan="9">没有符合条件的反馈</td></tr>'}</tbody></table></div></html>`);
 }
 
 async function prune(env) {
@@ -113,7 +133,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (request.method === "GET" && (url.pathname === "/" || url.pathname === "/feedback")) return page(form);
-      if (request.method === "GET" && url.pathname === "/inbox") return await inbox(request, env);
+      if (request.method === "GET" && url.pathname === "/inbox") return await inbox(request, env, url);
       if (request.method === "GET" && url.pathname === "/privacy") {
         return page('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>反馈隐私</title><h1>反馈隐私</h1><p>提交后，项目作者会收到你选择的聊法、版本、评分、问题、建议，以及你主动勾选附上的摘录。我们用它来定位试聊的问题。作者收件箱显示最近 90 天的数据，服务在收到新反馈时清理超过 90 天的旧记录。</p><p>项目不读取你的 ChatGPT 聊天记录。语音输入使用浏览器的识别功能，可能由浏览器提供方在线转写。此项目只接收你主动提交的文字。</p><p>如需删除一条反馈，请把提交后的回执编号交给项目作者。</p><a href="/">返回反馈页</a></html>');
       }

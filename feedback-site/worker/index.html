@@ -180,7 +180,7 @@
     const chosenHost = codes.get(hostParam) || hostParam;
     const initialHost = hosts.has(chosenHost) ? chosenHost : "unknown";
     const versionParam = params.get("version") || "";
-    const initialVersion = versionPattern.test(versionParam) ? versionParam : "";
+    const initialVersion = versionParam.length <= 40 && versionPattern.test(versionParam) ? versionParam : "";
     let previousBody = "";
     let requestId = "";
     let submitting = false;

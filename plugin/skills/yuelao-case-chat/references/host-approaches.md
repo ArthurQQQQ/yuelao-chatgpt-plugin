@@ -49,4 +49,15 @@
 
 - 郭延娇本人发布的连麦中，来访者问如何及早确认对方的生育计划，随后出现把这个问题直接问清的建议。卡片只摘要这段沟通动作，说话人和语气待核听。 [连麦 02:39](https://www.bilibili.com/video/BV13Zxe6QEv6/?t=159)
 
+另可查到这些补充场景。曲曲和梵公子的两条新素材是各自账号发布的观点分享。
+
+- 鳌烨讨论通过实际参加同城单身联谊校准预期。 [09:40](https://www.bilibili.com/video/BV1qdEL6REVT/?t=580)
+- 天书在比较择偶年龄前先问结婚动机。 [06:55](https://www.bilibili.com/video/BV1XYW86vEEz/?t=415)
+- 老林区分表达好感和让对方产生好感。 [02:59](https://www.bilibili.com/video/BV13W421R7Zx/?t=179)
+- 童锦程先问暧昧到了什么程度。 [00:00](https://www.bilibili.com/video/BV1tpLwzgEKS/?t=0)
+- 杰哥相亲核对约会里坐地铁还是打车的经过。 [01:34](https://www.bilibili.com/video/BV12L796CEd9/?t=94)
+- 郭延娇先问婆媳冲突发生在哪、是否同住。 [00:33](https://www.bilibili.com/video/BV1qmxe6bEug/?t=33)
+- 曲曲讨论第一次约会各付各账之后有没有下一次邀约。 [04:21](https://www.bilibili.com/video/BV1WQeCzNEau/?t=261)
+- 梵公子区分线上资料与线下接触传递的第一印象。 [02:45](https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165)
+
 以上是根据本地自动转写和短卡归纳的案例索引，时间和说话人待人工核听。童锦程、曲曲目前各有一条第三方发布样本。真实逐字引用、精确分数或说话人归属以原片核验为准。
