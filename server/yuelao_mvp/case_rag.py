@@ -28,12 +28,15 @@ HOSTS = {
     "tong": "童锦程",
     "jiege": "杰哥相亲",
     "fan": "梵公子社会学",
+    "guolu": "郭延娇",
 }
 HOST_ALIASES = {
     **HOSTS,
     "杰哥": HOSTS["jiege"],
     "樊公子": HOSTS["fan"],
     "梵公子": HOSTS["fan"],
+    "郭律": HOSTS["guolu"],
+    "郭延娇律师": HOSTS["guolu"],
 }
 PUBLIC_SAMPLES = MVP / "data/public-source-samples"
 SAMPLE_CARDS = MVP / "config/public-sample-cards.json"

@@ -2,7 +2,7 @@
 
 **把一段关系讲清楚，选一种聊法，必要时看一段相似连麦。**
 
-ChatGPT 插件原型 · 7 种可选聊法 · 3 道场景题 · 24 条原片 / 25 张案例卡
+ChatGPT 插件原型 · 8 种可选聊法 · 3 道场景题 · 25 条原片 / 26 张案例卡
 
 [中文](#中文) · [English](#english)
 
@@ -18,9 +18,9 @@ ChatGPT 插件原型 · 7 种可选聊法 · 3 道场景题 · 24 条原片 / 25
 
 我觉得月老连麦值得看，是因为来访者从一团乱麻里讲出具体处境，主播追问一句，常常就能把问题说得更清楚。我们想评价的是这句有没有接住事实、听到新细节会不会改判，以及推荐的原片能不能对上当下的问题。 [进展点 01](docs/checkpoint-01.md)
 
-### 四个象限，七种可选聊法
+### 四个象限，八种可选聊法
 
-横轴看这一轮更关心**感受与互动**，还是**条件与投入**。纵轴看更适合**先厘清**，还是**给下一步**。上图画的是参加三题匹配的首批五种聊法。七种都可直接点名或中途切换。
+横轴看这一轮更关心**感受与互动**，还是**条件与投入**。纵轴看更适合**先厘清**，还是**给下一步**。上图画的是参加三题匹配的首批五种聊法。八种都可直接点名或中途切换。
 
 | 字母 | 参考聊法 | 接下来会做什么 |
 | --- | --- | --- |
@@ -31,8 +31,9 @@ ChatGPT 插件原型 · 7 种可选聊法 · 3 道场景题 · 24 条原片 / 25
 | **QQ** | 曲曲 | 对照双方实际投入，帮你想清还愿意投入多少。 |
 | **JG** | 杰哥相亲（点名试用） | 问安全感落在哪笔家庭开销、怎样存钱或由谁作决定。 |
 | **FG** | 梵公子社会学（点名试用） | 从一次可观察的互动聊外形焦虑和约会反馈。 |
+| **GL** | 郭延娇（点名试用） | 先核对双方各自明确说过什么，再把长期计划分歧问具体。 |
 
-直接说「用杰哥相亲聊婚后开支」或「切到樊公子，聊聊约会之后的反应」。樊公子按公开账号名「梵公子社会学」接入。另有 13 位研究候选，涵盖同城说媒、现场牵线、婚内沟通和关系问答。 [20 位创作者名录](docs/creator-roster.md)
+直接说「用杰哥相亲聊婚后开支」或「切到樊公子，聊聊约会之后的反应」。也可以说「用郭律的方式，帮我问清对方的长期计划」。樊公子按公开账号名「梵公子社会学」接入。另有 20 位研究候选，涵盖同城说媒、现场牵线、婚内沟通和关系问答。 [28 位创作者名录](docs/creator-roster.md)
 
 ### 场景题库与 MBTI / SBTI 启发
 
@@ -48,9 +49,9 @@ ChatGPT 插件原型 · 7 种可选聊法 · 3 道场景题 · 24 条原片 / 25
 
 ### 提示词、工具与案例库
 
-提示词决定怎样接话，用户补充新事实时可以改判。工具负责场景题匹配、查询案例和展示证据卡。RAG 优先找相同主播的短卡，必要时用索引里的词项补找候选。每张卡保存来访情境、接话动作和原片时码。仓库内有 **24 条原片记录和 25 张短卡**，转写和说话人归属待人工核听。完整逐字稿、音视频和私人对话保存在本机。 [MCP 服务](server/yuelao_mvp/case_mcp.py) · [HTTP 联调记录](docs/acceptance-v0.2.6.json)
+提示词决定怎样接话，用户补充新事实时可以改判。工具负责场景题匹配、查询案例和展示证据卡。RAG 优先找相同主播的短卡，必要时用索引里的词项补找候选。每张卡保存来访情境、接话动作和原片时码。仓库内有 **25 条原片记录和 26 张短卡**，转写和说话人归属待人工核听。完整逐字稿、音视频和私人对话保存在本机。 [MCP 服务](server/yuelao_mvp/case_mcp.py) · [HTTP 联调记录](docs/acceptance-v0.2.7.json) · [素材规模与提示词接法](docs/corpus-and-prompt.md)
 
-当前版本 **0.2.6** 已验证本机服务、七种聊法点名切换和新案例的证据卡调用。梵公子案例来自一段 17 秒的第三方片段，说话人和语气待核听。ChatGPT 账号内的注册和显示仍待实测。 [进展点 02](docs/checkpoint-02.md) · [本机启动与接入](#run-locally)
+当前版本 **0.2.7** 已验证本机服务、八种聊法点名切换和新案例的证据卡调用。梵公子案例来自一段 17 秒的第三方片段，说话人和语气待核听。ChatGPT 账号内的注册和显示仍待实测。 [进展点 03](docs/checkpoint-03.md) · [本机启动与接入](#run-locally)
 
 ## English
 
@@ -64,9 +65,9 @@ On Chinese-language livestreams, callers sometimes bring a real dating or relati
 
 What interests me about these live calls is how one well-placed question can make a messy situation easier to describe. We evaluate whether the reply picks up the facts, changes its judgment when new details arrive, and links to a clip that actually addresses the caller's question. [Checkpoint 01](docs/checkpoint-01.md)
 
-### Four quadrants and seven selectable styles
+### Four quadrants and eight selectable styles
 
-The horizontal axis runs from **feelings and interaction** to **constraints and effort**. The vertical axis runs from **clarifying first** to **suggesting a next step**. The chart shows the first five styles, which are available through the quiz. You can pick or switch among all seven styles by name.
+The horizontal axis runs from **feelings and interaction** to **constraints and effort**. The vertical axis runs from **clarifying first** to **suggesting a next step**. The chart shows the first five styles, which are available through the quiz. You can pick or switch among all eight styles by name.
 
 | Code | Style reference | What it tends to do next |
 | --- | --- | --- |
@@ -77,8 +78,9 @@ The horizontal axis runs from **feelings and interaction** to **constraints and 
 | **QQ** | Ququ | Compare the effort both people have already put in and help you decide how much to keep investing. |
 | **JG** | Jie Ge Matchmaking (direct-pick trial) | Ask what financial security means in practice, such as household expenses, savings, or who makes decisions. |
 | **FG** | Fan Gongzi (direct-pick trial) | Ask what happened on a date before drawing conclusions about appearance or interest. |
+| **GL** | Guo Yanjiao (direct-pick trial) | Clarify what each person has said about long-term plans and help ask a concrete follow-up. |
 
-Try “Talk through household expenses with Jie Ge” or “Switch to Fan Gongzi and help me understand what happened after the date.” The roster also tracks 13 creators for research across local matchmaking, onstage introductions, and relationship Q&A. [20-creator roster](docs/creator-roster.md)
+Try “Talk through household expenses with Jie Ge” or “Switch to Fan Gongzi and help me understand what happened after the date.” The roster also tracks 20 creators for research across local matchmaking, onstage introductions, and relationship Q&A. [28-creator roster](docs/creator-roster.md)
 
 ### The question bank, inspired by MBTI and SBTI
 
@@ -94,7 +96,7 @@ You can skip questions, choose between two suggested responses if the scores tie
 
 ### Prompts, tools, and retrieval
 
-Prompts guide how the model responds and when it updates its view. The read-only MCP tools match a style, search for a case, and display a source card. Retrieval prioritizes the selected style's short cards and uses indexed terms to surface extra candidates when needed. This repository contains metadata for **24 source videos and 25 case cards**, with timecodes, short situations, and host actions. Transcription and speaker attribution still need human audio review. Full transcripts, source media, and private conversations are stored locally. [MCP service](server/yuelao_mvp/case_mcp.py) · [HTTP acceptance results](docs/acceptance-v0.2.6.json)
+Prompts guide how the model responds and when it updates its view. The read-only MCP tools match a style, search for a case, and display a source card. Retrieval prioritizes the selected style's short cards and uses indexed terms to surface extra candidates when needed. This repository contains metadata for **25 source videos and 26 case cards**, with timecodes, short situations, and host actions. Transcription and speaker attribution still need human audio review. Full transcripts, source media, and private conversations are stored locally. [MCP service](server/yuelao_mvp/case_mcp.py) · [HTTP acceptance results](docs/acceptance-v0.2.7.json) · [Corpus and prompt integration](docs/corpus-and-prompt.md)
 
 ## Run locally
 
@@ -108,4 +110,4 @@ python -m uvicorn yuelao_mvp.cloud_mcp:create_app --factory --host 127.0.0.1 --p
 
 本机健康检查为 `http://127.0.0.1:8080/healthz`，MCP 端点为 `http://127.0.0.1:8080/mcp`。私有试用可走 OpenAI Secure MCP Tunnel。部署时可用 `server/` 里的 Dockerfile，在 HTTPS 网关配置访问控制，将实际域名设为 `YUELAO_ALLOWED_HOSTS`。在 ChatGPT 添加自定义 MCP 后，将连接绑定到 [插件目录](plugin/)。
 
-Use `http://127.0.0.1:8080/healthz` to check the service and `http://127.0.0.1:8080/mcp` as the local MCP endpoint. For private testing, use OpenAI Secure MCP Tunnel. For hosted use, build the Dockerfile in `server/`, configure access control at the HTTPS gateway, and set `YUELAO_ALLOWED_HOSTS` to the serving hostname. Add the custom MCP server in ChatGPT and bind it to the [plugin skill](plugin/). Version **0.2.6** passed local HTTP checks for direct selection and evidence-card calls. The Fan Gongzi card points to a 17-second third-party clip pending speaker and audio review. ChatGPT account registration and in-chat rendering still need verification. [Connect to ChatGPT](https://developers.openai.com/plugins/deploy/connect-chatgpt) · [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)
+Use `http://127.0.0.1:8080/healthz` to check the service and `http://127.0.0.1:8080/mcp` as the local MCP endpoint. For private testing, use OpenAI Secure MCP Tunnel. For hosted use, build the Dockerfile in `server/`, configure access control at the HTTPS gateway, and set `YUELAO_ALLOWED_HOSTS` to the serving hostname. Add the custom MCP server in ChatGPT and bind it to the [plugin skill](plugin/). Version **0.2.7** passed local HTTP checks for direct selection and evidence-card calls. The Fan Gongzi card points to a 17-second third-party clip pending speaker and audio review. ChatGPT account registration and in-chat rendering still need verification. [Connect to ChatGPT](https://developers.openai.com/plugins/deploy/connect-chatgpt) · [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)

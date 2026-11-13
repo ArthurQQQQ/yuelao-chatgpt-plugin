@@ -1,0 +1,185 @@
+{
+  "transport": "MCP Streamable HTTP, local v0.2.7 deployment snapshot",
+  "health": "ok",
+  "selectable_hosts": [
+    "aoye",
+    "tianshu",
+    "laolin",
+    "tong",
+    "ququ",
+    "jiege",
+    "fan",
+    "guolu"
+  ],
+  "quiz_host": "laolin",
+  "tools": [
+    "match_conversation_style",
+    "search_relationship_cases",
+    "show_relationship_case"
+  ],
+  "legacy_checks": [
+    {
+      "id": "relocate",
+      "results": [
+        [
+          "bili-BV1TW9FBjEvp",
+          "https://www.bilibili.com/video/BV1TW9FBjEvp/?t=41"
+        ]
+      ]
+    },
+    {
+      "id": "limits",
+      "results": [
+        [
+          "bili-BV1qdEL6REVT",
+          "https://www.bilibili.com/video/BV1qdEL6REVT/?t=68"
+        ]
+      ]
+    },
+    {
+      "id": "new-start",
+      "results": [
+        [
+          "bili-BV1J99MBoEnW",
+          "https://www.bilibili.com/video/BV1J99MBoEnW/?t=80"
+        ]
+      ]
+    },
+    {
+      "id": "dating-effort",
+      "results": [
+        [
+          "bili-BV1XYW86vEEz",
+          "https://www.bilibili.com/video/BV1XYW86vEEz/?t=284"
+        ],
+        [
+          "bili-BV1MAWn6NEVp",
+          "https://www.bilibili.com/video/BV1MAWn6NEVp/?t=140"
+        ]
+      ]
+    },
+    {
+      "id": "code-owner",
+      "results": [
+        [
+          "bili-BV1WM826EE4H",
+          "https://www.bilibili.com/video/BV1WM826EE4H/?t=238"
+        ]
+      ]
+    },
+    {
+      "id": "household-finances",
+      "results": [
+        [
+          "bili-BV1e4W86zEmX",
+          "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104"
+        ]
+      ]
+    },
+    {
+      "id": "messages",
+      "results": [
+        [
+          "bili-BV1Yi421a7sj",
+          "https://www.bilibili.com/video/BV1Yi421a7sj/?t=84"
+        ]
+      ]
+    },
+    {
+      "id": "comfort",
+      "results": [
+        [
+          "bili-BV1GQsKefE6Z",
+          "https://www.bilibili.com/video/BV1GQsKefE6Z/?t=191"
+        ]
+      ]
+    },
+    {
+      "id": "no-contact",
+      "results": [
+        [
+          "bili-BV1hxpCesEYg",
+          "https://www.bilibili.com/video/BV1hxpCesEYg/?t=496"
+        ]
+      ]
+    },
+    {
+      "id": "host-mismatch",
+      "results": []
+    },
+    {
+      "id": "off-topic",
+      "results": []
+    },
+    {
+      "id": "unindexed-host",
+      "results": []
+    }
+  ],
+  "trial_checks": [
+    {
+      "host": "jiege",
+      "alias": "杰哥",
+      "question": "伴侣工资想用于家庭开支和投资，怎么约定婚后财务分工？",
+      "card": {
+        "source_id": "bili-BV1wtwLzTEa4",
+        "title": "“我想要安全感”",
+        "host": "杰哥相亲",
+        "url": "https://www.bilibili.com/video/BV1wtwLzTEa4/",
+        "timestamp_url": "https://www.bilibili.com/video/BV1wtwLzTEa4/?t=28",
+        "start_seconds": 28.0,
+        "end_seconds": 44.0,
+        "summary": "来访者想通过管理伴侣工资获得安全感，询问择偶和婚后财务分工。先追问为什么要管工资，再问这笔钱准备用于家庭开销还是投资。",
+        "situation": "来访者想通过管理伴侣工资获得安全感，询问择偶和婚后财务分工。",
+        "move": "先追问为什么要管工资，再问这笔钱准备用于家庭开销还是投资。",
+        "review_status": "machine_asr_pending_review",
+        "caveat": "这是案例摘要。引述说话人、原话或分数前，请按时间点核对原片。"
+      },
+      "alias_matches": true,
+      "wrong_time_empty": true
+    },
+    {
+      "host": "fan",
+      "alias": "樊公子",
+      "question": "我对外形有点焦虑，问过别人要不要整容或做外形调整，有类似的片段吗？",
+      "card": {
+        "source_id": "bili-BV1pPeUzyEDr",
+        "title": "梵公子对我进行了一波颜值评判！",
+        "host": "梵公子社会学",
+        "url": "https://www.bilibili.com/video/BV1pPeUzyEDr/",
+        "timestamp_url": "https://www.bilibili.com/video/BV1pPeUzyEDr/?t=0",
+        "start_seconds": 0.0,
+        "end_seconds": 15.34,
+        "summary": "一段第三方短片里，有人请对方评价外形，问自己是否需要做调整。自动转写呈现先回应外形疑问，随后接玩笑。发言归属和语气有待核听。",
+        "situation": "一段第三方短片里，有人请对方评价外形，问自己是否需要做调整。",
+        "move": "自动转写呈现先回应外形疑问，随后接玩笑。发言归属和语气有待核听。",
+        "review_status": "machine_asr_pending_review",
+        "caveat": "这是案例摘要。引述说话人、原话或分数前，请按时间点核对原片。"
+      },
+      "alias_matches": true,
+      "wrong_time_empty": true
+    },
+    {
+      "host": "guolu",
+      "alias": "郭律",
+      "question": "不想生育，相亲刚认识时怎么确认对方的生育计划和想不想要孩子？",
+      "card": {
+        "source_id": "bili-BV13Zxe6QEv6",
+        "title": "连麦1：有遗传概率的病史，相亲怎么坦白不踩雷？时机+话术+人群定位",
+        "host": "郭延娇",
+        "url": "https://www.bilibili.com/video/BV13Zxe6QEv6/",
+        "timestamp_url": "https://www.bilibili.com/video/BV13Zxe6QEv6/?t=159",
+        "start_seconds": 159.0,
+        "end_seconds": 178.1,
+        "summary": "来访者不想生育，问相亲刚认识时如何确认对方的生育计划。把找话术变成一个具体问题：接触初期直接问对方还想不想要孩子。",
+        "situation": "来访者不想生育，问相亲刚认识时如何确认对方的生育计划。",
+        "move": "把找话术变成一个具体问题：接触初期直接问对方还想不想要孩子。",
+        "review_status": "machine_asr_pending_review",
+        "caveat": "这是案例摘要。引述说话人、原话或分数前，请按时间点核对原片。"
+      },
+      "alias_matches": true,
+      "wrong_time_empty": true
+    }
+  ],
+  "unrelated_guolu_query_empty": true
+}

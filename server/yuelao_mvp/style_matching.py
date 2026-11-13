@@ -6,7 +6,7 @@ from typing import Literal, get_args
 
 TOPIC_HOSTS = dict(zip("ABCDE", ("aoye", "tianshu", "laolin", "tong", "ququ")))
 MOVE_HOSTS = dict(zip("ABCDE", ("laolin", "aoye", "tianshu", "tong", "ququ")))
-SelectableHost = Literal["aoye", "tianshu", "laolin", "tong", "ququ", "jiege", "fan"]
+SelectableHost = Literal["aoye", "tianshu", "laolin", "tong", "ququ", "jiege", "fan", "guolu"]
 SELECTABLE_HOSTS = frozenset(get_args(SelectableHost))
 TONES = {"A": "gentle", "B": "direct", "C": "adaptive"}
 RELATIONSHIP_HOSTS = {"A": "laolin", "B": "ququ", "C": "tong"}

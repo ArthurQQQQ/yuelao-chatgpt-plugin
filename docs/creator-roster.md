@@ -1,12 +1,12 @@
 # 月老与情感创作者名录 / Creator roster
 
-This roster maps public Chinese-language matchmaking and relationship content by format and conversational approach. It covers seven selectable AI styles, including two direct-pick trials, and thirteen research candidates. Inclusion reflects the range of approaches covered. All styles are AI interpretations inspired by public material.
+This roster maps public Chinese-language matchmaking and relationship content by format and conversational approach. It covers eight selectable AI styles, including three direct-pick trials, and twenty research candidates. Inclusion reflects the range of approaches covered. All styles are AI interpretations inspired by public material.
 
-名录按提问方式、内容形式和适用情境选人。这里共有 **20 个条目**，其中 **7 种聊法可点名试用，13 位是研究候选**。公开样本用于确认是谁发布、内容是什么形式、可以研究哪个对话动作。名单顺序不代表人气。账号自发内容也可能经过剪辑或演绎。
+名录按提问方式、内容形式和适用情境选人。这里共有 **28 个条目**，其中 **8 种聊法可点名试用，20 位是研究候选**。公开样本用于确认是谁发布、内容是什么形式、可以研究哪个对话动作。名单顺序不代表人气。账号自发内容也可能经过剪辑或演绎。
 
 ## 可选聊法 / Selectable styles
 
-**AY、TS、LL、TJ、QQ** 参与三道场景题匹配。**JG、FG** 是点名试聊，试聊片段的说话人与时码仍待核听。以下“第一步”是插件的接法设计。
+**AY、TS、LL、TJ、QQ** 参与三道场景题匹配。**JG、FG、GL** 是点名试聊，试聊片段的说话人与时码仍待核听。以下“第一步”是插件的接法设计。
 
 | 代码 / Code | 参考对象 / Creator | 第一轮可做什么 / First move | 来源 / Source |
 | --- | --- | --- | --- |
@@ -17,10 +17,25 @@ This roster maps public Chinese-language matchmaking and relationship content by
 | QQ | 曲曲 | 把双方已经兑现的行动摆出来，再问还愿意投入多少。 | [第三方发布的再次邀约片段](https://www.bilibili.com/video/BV1mnd1YHEq7/?t=272) |
 | JG | 杰哥相亲 | 先问“保障”在这件事里具体指什么，再查已经谈定了什么。 | [B 站账号发布](https://www.bilibili.com/list/319100322?bvid=BV1HYT56aET3&oid=116831247402166) · [抖音《我只是想要个保障》](https://www.douyin.com/video/7611751023724239985) · [试聊候选片段](https://www.bilibili.com/video/BV1wtwLzTEa4/?t=28) |
 | FG | 梵公子社会学（可用「樊公子」点名） | 先问是哪件互动让用户想改变做法，再聊用户最想解决的一件事。本人账号样本是关系观点内容，连麦说话人待核。 | [B 站账号发布](https://www.bilibili.com/video/av116578465088971/) · [账号主页](https://space.bilibili.com/1303431039) · [第三方切片线索](https://www.bilibili.com/video/BV1pPeUzyEDr/) |
+| GL | 郭延娇（郭律） | 先问双方分别明确说过什么，再把长期计划分歧变成可直接讨论的问题。 | [本人 B 站主页](https://space.bilibili.com/3707029795375134) · [本人发布连麦 02:39](https://www.bilibili.com/video/BV13Zxe6QEv6/?t=159) |
 
 已有案例索引的时码和说话人仍待核听。来源状态见[聊法和原片锚点](../plugin/skills/yuelao-case-chat/references/host-approaches.md)。
 
-## 研究候选 / Research candidates
+## 新增高人气候选 / Additional high-reach creators
+
+粉丝数是本轮可见的公开页面快照，可能带缓存。不同平台的数字按各自口径记录。账号粉丝和单条播放用于判断传播范围。建库按独立连麦及可核对的问答动作计数。郭律的 B 站本人账号约 7.8 万关注，抖音第三方统计约 97.5 万粉，后者的统计日期未能核实。 [B 站本人直播间](https://live.bilibili.com/1776791496) · [抖音数据快照](https://dy3.feigua.cn/bloggeropen/97E8FBBF17032A3281CCAD0CB66AAE4A)
+
+| 创作者 / Creator | 可见热度 / Reach | 可研究的内容 / Format | 样本 / Source |
+| --- | ---: | --- | --- |
+| 涂磊 | 抖音约 4,815 万粉 | 双边调解，双方叙述冲突后怎么回到具体事实。 | [抖音作者卡](https://www.douyin.com/shipin/7263095483239794743) · [《爱情保卫战》发行版](https://www.iq.com/album/19rr1xhmzw) |
+| 大冰 | 抖音约 1,271 万粉 | 泛生活连线，什么时候继续听，什么时候追问关系边界。 | [抖音作者卡](https://www.douyin.com/video/7657587032038909883) · [本人连线](https://www.douyin.com/video/7656432008864040305) |
+| 周小鹏 | 抖音约 379 万粉 | 婚姻冲突，怎么发现一次争吵过去了但问题还在。 | [抖音作者卡](https://www.douyin.com/shipin/7625090923185522730) · [本人作品](https://www.douyin.com/video/7610408770325541610) |
+| 武志红 | B 站约 161 万关注 | 关系心理科普，关注讨好、表达不满和边界。 | [本人作品与作者卡](https://www.bilibili.com/list/508670955?bvid=BV1ZP4y1x7aH&oid=889692248) |
+| 苏晨情感电台 | 抖音约 114 万粉 | 情感问答，怎么从想离婚的诉求追问近期冲突。 | [抖音作者卡与文稿](https://www.douyin.com/shipin/7622846517723924526) · [本人作品](https://www.douyin.com/video/7442722457800183051) |
+| 谢胜子 | 抖音约 73 万粉 | 恋爱经历和女性成长观点，可用于找观点对照。 | [抖音作者卡](https://www.douyin.com/video/7471663775893048615) · [本人恋爱主题作品](https://jingxuan.douyin.com/m/video/7574670629828447515) |
+| 轩语说相亲 | B 站约 34 万关注 | 相亲点评，公开样本可用于研究如何把择偶要求拆细。 | [本人作品与作者卡](https://www.bilibili.com/list/1969220903/?bvid=BV1ACTsz1Ee5&oid=114630479317743) |
+
+## 此前的研究候选 / Earlier research candidates
 
 | 创作者 / Creator | 可研究的情境 / Scenario | 公开样本形式 / Public sample format | 样本 / Source |
 | --- | --- | --- | --- |
