@@ -1,0 +1,91 @@
+{
+  "scope": "rerun of two known failures after prompt fix, no retrieval, not independent holdout",
+  "rows": [
+    {
+      "before": "你在北京做互联网产品，爸妈都是老师。之前读书和工作占了大部分精力，单身挺久，最近才腾出心思认真谈一段，也会考虑结婚。咱们先抓一个会影响你能跟谁长期走下去的条件：你是打算长期留在北京，还是遇到合适的人，也愿意商量以后在哪儿定居？",
+      "after": {
+        "question": "我在北京做互联网产品，家里父母都是老师。我读书和工作占了很多精力，单身挺久，最近才想认真开始一段亲密关系，也会考虑婚姻。我一直没什么实感，想知道大概能找到什么样的对象。",
+        "host": "aoye",
+        "with_retrieval": false,
+        "retrieved": [],
+        "material_characters": 3891,
+        "prompt_sha256": "ad0adca003f1e8dd678e491e276f7e1d1d7085326722439719b5b230fc98b405",
+        "selection": null,
+        "displayed_reply": "读书和工作占了你好多精力，刚开始认真考虑找对象，对自己会遇到什么样的人没实感，很正常。你在北京做产品，也愿意往婚姻方向考虑。要判断大概能和什么样的人发展，先看看你现在的生活里实际能认识谁：最近有没有通过朋友介绍、活动或者交友软件，认识过一两个你愿意进一步了解的人？",
+        "inference": [
+          {
+            "model": "gpt-6.1-sol",
+            "reasoning_effort": "low",
+            "usage": {
+              "input_tokens": 22157,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 111,
+              "reasoning_output_tokens": 0
+            },
+            "elapsed_seconds": 6.21,
+            "tool_events": [],
+            "status": "completed"
+          }
+        ]
+      },
+      "host": "aoye"
+    },
+    {
+      "before": "你想认真找对象，也留意到不少接触见了一次就停了。判断有没有继续发展的可能，可以先看双方愿不愿意把下次见面约具体。就拿最近一次你还想继续了解的人来说，你们见完以后，有人提过下次什么时候见吗？",
+      "after": {
+        "question": "我想认真找对象，跟人接触时有什么需要注意的？我经常和别人见过一次，就没有第二次了。",
+        "host": "tianshu",
+        "with_retrieval": false,
+        "retrieved": [],
+        "material_characters": 3965,
+        "prompt_sha256": "96cf5f1b919f29fbb6a006603e7db72d593553192e034368fa3396d46d23ee8a",
+        "selection": null,
+        "displayed_reply": "你说经常见了一次就没下文。回想最近一次，是你见完也不太想再约，还是你想再见一面，对方没接上？",
+        "inference": [
+          {
+            "model": "gpt-6.1-sol",
+            "reasoning_effort": "low",
+            "usage": {
+              "input_tokens": 23246,
+              "cached_input_tokens": 19328,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 59,
+              "reasoning_output_tokens": 0
+            },
+            "elapsed_seconds": 5.05,
+            "tool_events": [],
+            "status": "completed"
+          }
+        ]
+      },
+      "host": "tianshu",
+      "after_first_edit": {
+        "question": "我想认真找对象，跟人接触时有什么需要注意的？我经常和别人见过一次，就没有第二次了。",
+        "host": "tianshu",
+        "with_retrieval": false,
+        "retrieved": [],
+        "material_characters": 3891,
+        "prompt_sha256": "5d456e06a672241762c07841e2ca06b42c778e32d147ba1732c4791a3e4f8330",
+        "selection": null,
+        "displayed_reply": "连续几次见完就没下文，确实容易让人怀疑自己哪儿做得不对。先挑最近一次你自己还想再见的人来聊：见完后，你们有谁提过一个具体的时间或活动，想约第二次吗？都没开口，和有人约了但对方没接，下一步是不一样的。",
+        "inference": [
+          {
+            "model": "gpt-6.1-sol",
+            "reasoning_effort": "low",
+            "usage": {
+              "input_tokens": 22121,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 101,
+              "reasoning_output_tokens": 0
+            },
+            "elapsed_seconds": 5.67,
+            "tool_events": [],
+            "status": "completed"
+          }
+        ]
+      }
+    }
+  ]
+}

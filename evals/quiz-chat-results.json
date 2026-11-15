@@ -1,0 +1,103 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "user": "我更适合哪位月老？想答新版题。",
+      "expected_lookup": null,
+      "reply": "新版一共四题，一次答一题。选你此刻最想听到的那句，回字母、用自己的话答，或说「跳过」都可以。\n\n**第 1 题｜两次约会都聊得很开心，散场后却总是你先发消息。你更想听哪一句？**\n\n- **A**「从哪次回复开始，你觉得自己说的话没被认真听？」\n- **B**「两次见面分别是谁提的，最后谁把时间定下来？」\n- **C**「如果你还想见一次，下回可以直接问对方哪天有空，再看他能不能给个时间。」\n- **D**「这两次联系里，哪些是你在维持，哪些是对方做的？你还愿意主动到什么程度？」",
+      "calls": [],
+      "lookup_check": true
+    },
+    {
+      "turn": 2,
+      "user": "我想跳过第一题和第三题，第二题选 C，第四题选 A。按这个给我结果。",
+      "expected_lookup": null,
+      "reply": "这次最适合你的是**郭延娇（郭律）的聊法**。第二题选 C、第四题选 A，两题都指向她。你选的接话都在把模糊的期待变成可以谈的安排，比如先说清楚未来一年怎么过，再挑一件最在意的长期计划直接问。\n\n按这个聊法接一句的话，「如果定居和见家长只能先谈一件，你最想先谈哪件？你希望对方给你一个什么样的答复？」",
+      "calls": [
+        {
+          "type": "mcpToolCall",
+          "id": "exec-67a6a4ba-e1b7-423f-8bf9-d4f5bdac578b",
+          "server": "yuelao-cases",
+          "tool": "match_conversation_style",
+          "status": "completed",
+          "arguments": {
+            "quiz_answers": [
+              null,
+              "C",
+              null,
+              "A"
+            ]
+          },
+          "appContext": null,
+          "mcpAppUi": null,
+          "pluginId": null,
+          "readOnlyHint": true,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"host\": \"guolu\",\n  \"tone\": \"adaptive\",\n  \"alternate\": null,\n  \"tied\": []\n}"
+              }
+            ],
+            "structuredContent": {
+              "host": "guolu",
+              "tone": "adaptive",
+              "alternate": null,
+              "tied": []
+            },
+            "_meta": null
+          },
+          "error": null,
+          "durationMs": 3,
+          "startedAtMs": 1794782433650,
+          "completedAtMs": 1794782433653
+        }
+      ],
+      "lookup_check": true
+    },
+    {
+      "turn": 3,
+      "user": "我想换到杰哥，用刚才我喜欢的那种直接一点的方式。",
+      "expected_lookup": null,
+      "reply": "好，换杰哥相亲的聊法，咱们直接点。\n\n如果就接刚才那道题，对方说「以后再看」，你最想让他现在给个准话的是哪件事？比如见家长，你要的是定个时间，还是先确认他到底愿不愿意见？",
+      "calls": [
+        {
+          "type": "mcpToolCall",
+          "id": "exec-fd8f920d-d123-4d32-bc9d-376ef89f9b8a",
+          "server": "yuelao-cases",
+          "tool": "match_conversation_style",
+          "status": "completed",
+          "arguments": {
+            "selected_host": "jiege",
+            "tone": "B"
+          },
+          "appContext": null,
+          "mcpAppUi": null,
+          "pluginId": null,
+          "readOnlyHint": true,
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"host\": \"jiege\",\n  \"tone\": \"direct\",\n  \"alternate\": null,\n  \"tied\": []\n}"
+              }
+            ],
+            "structuredContent": {
+              "host": "jiege",
+              "tone": "direct",
+              "alternate": null,
+              "tied": []
+            },
+            "_meta": null
+          },
+          "error": null,
+          "durationMs": 1,
+          "startedAtMs": 1794782441232,
+          "completedAtMs": 1794782441233
+        }
+      ],
+      "lookup_check": true
+    }
+  ],
+  "same_ephemeral_conversation": true
+}

@@ -1,5 +1,6 @@
 """Select a conversation approach from optional, session-specific preferences."""
 
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from typing import Literal, get_args
 
@@ -12,6 +13,14 @@ TONES = {"A": "gentle", "B": "direct", "C": "adaptive"}
 RELATIONSHIP_HOSTS = {"A": "laolin", "B": "ququ", "C": "tong"}
 TRADEOFF_HOSTS = {"A": "aoye", "B": "tianshu", "C": "laolin"}
 FOLLOWUP_HOSTS = {"A": "tianshu", "B": "aoye", "C": "tong"}
+
+QuizChoice = Literal["A", "B", "C", "D"]
+QUIZ_HOSTS = (
+    {"A": "laolin", "B": "tianshu", "C": "tong", "D": "ququ"},
+    {"A": "aoye", "B": "ququ", "C": "guolu", "D": "jiege"},
+    {"A": "fan", "B": "jiege", "C": "laolin", "D": "tong"},
+    {"A": "guolu", "B": "fan", "C": "aoye", "D": "tianshu"},
+)
 
 
 @dataclass(frozen=True)
@@ -70,6 +79,31 @@ def match_scenario(
         (2, _answer(TRADEOFF_HOSTS, tradeoff)),
         (2, _answer(FOLLOWUP_HOSTS, followup)),
     )
+    return _rank_choices(answers, tie_break=tie_break)
+
+
+def match_quiz(
+    answers: Sequence[str | None],
+    *,
+    tie_break: str | None = None,
+    selected_host: str | None = None,
+    tone: str | None = None,
+) -> StyleMatch:
+    """Match the four-scene quiz. Skips retain their original question position."""
+    if selected_host is not None:
+        return match_style(tone=tone, selected_host=selected_host)
+    if len(answers) > len(QUIZ_HOSTS):
+        raise ValueError("Answer up to four scene questions")
+    preferences = ((1, _answer(options, answer)) for options, answer in zip(QUIZ_HOSTS, answers))
+    return _rank_choices(preferences, tie_break=tie_break, tone=_answer(TONES, tone) or "adaptive")
+
+
+def _rank_choices(
+    answers: Iterable[tuple[int, str | None]],
+    *,
+    tie_break: str | None,
+    tone: str = "adaptive",
+) -> StyleMatch:
     scores: dict[str, int] = {}
     for points, host in answers:
         if host is not None:
@@ -77,20 +111,20 @@ def match_scenario(
     if not scores:
         if tie_break is not None:
             raise ValueError("No scenario choices to resolve")
-        return StyleMatch(None, "adaptive")
+        return StyleMatch(None, tone)
 
     ranked = sorted(scores, key=scores.__getitem__, reverse=True)
     lead = ranked[0]
     tied = tuple(host for host in ranked if scores[host] == scores[lead])
     if len(tied) > 1:
         if tie_break is None:
-            return StyleMatch(None, "adaptive", tied=tied)
+            return StyleMatch(None, tone, tied=tied)
         if tie_break not in tied:
             raise ValueError(f"Choose one of {', '.join(tied)}")
         alternate = next(host for host in tied if host != tie_break)
-        return StyleMatch(tie_break, "adaptive", alternate)
+        return StyleMatch(tie_break, tone, alternate)
 
     if tie_break is not None:
         raise ValueError("The scenario choices are not tied")
     alternate = ranked[1] if len(ranked) > 1 else None
-    return StyleMatch(lead, "adaptive", alternate)
+    return StyleMatch(lead, tone, alternate)

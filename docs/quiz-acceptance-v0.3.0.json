@@ -1,0 +1,138 @@
+{
+  "version": "0.3.0",
+  "transport": "local Streamable HTTP",
+  "matching": {
+    "laolin": {
+      "answers": [
+        "A",
+        null,
+        "C",
+        null
+      ],
+      "host": "laolin",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "tianshu": {
+      "answers": [
+        "B",
+        null,
+        null,
+        "D"
+      ],
+      "host": "tianshu",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "tong": {
+      "answers": [
+        "C",
+        null,
+        "D",
+        null
+      ],
+      "host": "tong",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "ququ": {
+      "answers": [
+        "D",
+        "B",
+        null,
+        null
+      ],
+      "host": "ququ",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "aoye": {
+      "answers": [
+        null,
+        "A",
+        null,
+        "C"
+      ],
+      "host": "aoye",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "guolu": {
+      "answers": [
+        null,
+        "C",
+        null,
+        "A"
+      ],
+      "host": "guolu",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "jiege": {
+      "answers": [
+        null,
+        "D",
+        "B",
+        null
+      ],
+      "host": "jiege",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    },
+    "fan": {
+      "answers": [
+        null,
+        null,
+        "A",
+        "B"
+      ],
+      "host": "fan",
+      "tone": "adaptive",
+      "alternate": null,
+      "tied": []
+    }
+  },
+  "tie": {
+    "host": null,
+    "tone": "adaptive",
+    "alternate": null,
+    "tied": [
+      "laolin",
+      "aoye",
+      "fan",
+      "guolu"
+    ]
+  },
+  "tie_resolution": {
+    "host": "fan",
+    "tone": "adaptive",
+    "alternate": "laolin",
+    "tied": []
+  },
+  "all_skipped": {
+    "host": null,
+    "tone": "adaptive",
+    "alternate": null,
+    "tied": []
+  },
+  "direct_override": {
+    "host": "jiege",
+    "tone": "direct",
+    "alternate": null,
+    "tied": []
+  },
+  "legacy": {
+    "host": "laolin",
+    "tone": "adaptive",
+    "alternate": "tianshu",
+    "tied": []
+  },
+  "retrieval_regression_passed": 23
+}

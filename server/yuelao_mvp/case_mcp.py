@@ -9,7 +9,7 @@ import sqlite3
 from typing import Annotated, Literal
 
 from .case_rag import DEFAULT_DB, REVIEW_STATUS, search_relationship_cases as lookup_cases, time_link
-from .style_matching import SelectableHost, match_scenario, match_style
+from .style_matching import QuizChoice, SelectableHost, match_quiz, match_scenario, match_style
 
 try:
     from mcp.server.mcpserver import MCPServer
@@ -68,10 +68,11 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
         widget_meta = {"ui": {"resourceUri": CASE_WIDGET_URI}}
 
     @server.tool(
-        title="按三题推荐月老聊法",
-        description=("按用户选的三道场景题推荐本轮聊法。relationship、tradeoff、followup 为 A–C，跳过传空。"
-                     "最高分并列时返回 tied，用户选定后用 tie_break。已点名用 selected_host。jiege（杰哥相亲）、fan（梵公子社会学）、guolu（郭延娇）支持点名试用。"
-                     "只在接续旧版问法时用 topic、first_move 和 tone。"),
+        title="推荐本轮月老聊法",
+        description=("新版四道场景题用 quiz_answers，按题序填 A–D，跳过填 null；覆盖八种聊法。"
+                     "最高分并列时返回 tied，用户选定后原样提交答案并加 tie_break。已点名用 selected_host。"
+                     "接续旧版三场景时用 relationship、tradeoff、followup（A–C）；旧版主题问法用 topic、first_move。"
+                     "有单独的语气偏好时可在新版传 tone。"),
         annotations=ToolAnnotations(
             read_only_hint=True, destructive_hint=False, idempotent_hint=True, open_world_hint=False,
         ),
@@ -84,9 +85,15 @@ def build_server(db: Path = DEFAULT_DB) -> MCPServer:
         relationship: Literal["A", "B", "C"] | None = None,
         tradeoff: Literal["A", "B", "C"] | None = None,
         followup: Literal["A", "B", "C"] | None = None,
-        tie_break: Literal["aoye", "tianshu", "laolin", "tong", "ququ"] | None = None,
+        tie_break: SelectableHost | None = None,
+        quiz_answers: Annotated[list[QuizChoice | None], Field(max_length=4)] | None = None,
     ) -> StyleResult:
-        if any(choice is not None for choice in (relationship, tradeoff, followup, tie_break)):
+        if quiz_answers is not None:
+            legacy_answers = (topic, first_move, relationship, tradeoff, followup)
+            if selected_host is None and any(choice is not None for choice in legacy_answers):
+                raise ValueError("Choose either quiz_answers or legacy answers")
+            matched = match_quiz(quiz_answers, tie_break=tie_break, selected_host=selected_host, tone=tone)
+        elif any(choice is not None for choice in (relationship, tradeoff, followup, tie_break)):
             matched = match_scenario(relationship, tradeoff, followup, tie_break=tie_break,
                                      selected_host=selected_host)
         else:

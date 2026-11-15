@@ -1,0 +1,807 @@
+{
+  "model": "gpt-6.1-sol",
+  "scope": "One actual answer per host/arm; same refreshed style prompts (source anchors removed), same input, only candidates change. Reference fixed before generation. One trial per arm. No preference or human quality metric.",
+  "results": [
+    {
+      "fixture": "aoye-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "我一直靠朋友零星介绍，压根没报过本地单身联谊，也不知道我喜欢的那类人会不会对我有兴趣。有没有原片讲怎么去线下摸摸底？",
+      "host": "aoye",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "5f9ddbf6abd832f406892d449fc75d1ea89e9ae283081f850c54fb0c0ec03807",
+      "selection": null,
+      "displayed_reply": "一直靠朋友零星介绍，碰到喜欢的类型都得看缘分，确实很难知道对方会不会也想认识你。手头没有讲怎么去线下摸底的合适原片。你可以先挑一场有小组交流的同城活动，跟一两个有好感的人聊聊。聊得来就问一句要不要加微信，看看散场之后对方愿不愿意接着聊。一场先看看这个渠道能不能让你遇到想认识的人。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23199,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 132,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.75,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "我一直靠朋友零星介绍，压根没报过本地单身联谊，也不知道我喜欢的那类人会不会对我有兴趣。有没有原片讲怎么去线下摸摸底？",
+      "host": "aoye",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "5f9ddbf6abd832f406892d449fc75d1ea89e9ae283081f850c54fb0c0ec03807",
+      "selection": null,
+      "displayed_reply": "手头没有找到讲怎么去本地联谊摸底的合适原片。朋友零星介绍，你接触到的人本来就少，现在还看不出你喜欢的那类人对你有没有兴趣。\n\n可以先挑一场同城、年龄段合适、能自由聊天的活动。就给自己一个小目标：遇到一个你想再聊的人，聊得舒服就问一句要不要加微信，回头看看对方会不会也接着聊。一场下来没遇到喜欢的，只说明这场没遇到。你说的「喜欢的那类人」，最看重的是哪一点？这个比活动规模更能帮你挑对场子。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22141,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 173,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 7.44,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "我一直靠朋友零星介绍，压根没报过本地单身联谊，也不知道我喜欢的那类人会不会对我有兴趣。有没有原片讲怎么去线下摸摸底？",
+      "host": "aoye",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1qdEL6REVT",
+          "host": "鳌烨",
+          "title": "性格很好的女生",
+          "url": "https://www.bilibili.com/video/BV1qdEL6REVT/",
+          "start_seconds": 580.22,
+          "end_seconds": 601.12,
+          "situation": "只凭少数接触判断相亲范围，之前没去过有组织的本地单身活动。",
+          "move": "建议先参加一次当地有组织的单身联谊，看现场是否有人主动加联系方式或表达进一步认识的意愿，再用实际反应校准预期。",
+          "summary": "只凭少数接触判断相亲范围，之前没去过有组织的本地单身活动。建议先参加一次当地有组织的单身联谊，看现场是否有人主动加联系方式或表达进一步认识的意愿，再用实际反应校准预期。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1qdEL6REVT/?t=580",
+          "score": 17.673241,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "2fa93ee4e07e7d45548486c51c59f2540d94f30e2202e1fbf2e91e29f985c04a",
+      "selection": "bili-BV1qdEL6REVT",
+      "displayed_reply": "朋友零星介绍，能碰到的人就那么几个，心里没底很正常。有段鳌烨的原片跟你这个情况挺像，也是之前没参加过本地单身联谊，想先去一次看看实际反馈。片段是根据机器转写找到的，还没核听。你第一次去，可以主动跟一两个你感兴趣的人聊聊，看看对方会不会也主动问你的情况，或者愿不愿意交换联系方式。一次活动先感受下这个场子里有没有你想认识的人，聊得怎么样。\n\n[看相似连麦原片 09:40](https://www.bilibili.com/video/BV1qdEL6REVT/?t=580)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23300,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 7.25,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tianshu-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "一直是家里催我结婚，我自己还没想清楚。纠结相亲对象该比我大还是比我小。想看天书从这种情况入手的原片。",
+      "host": "tianshu",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "1b1b1087691d0c0f5173094b3c54c77e87d03d5df60d3dde2bc955c9af2ac356",
+      "selection": null,
+      "displayed_reply": "家里催得紧，你自己还在想要不要结婚，这时候又得选找比你大的还是比你小的，确实容易卡住。手头没有贴合你这个处境的天书原片。按天书的聊法，我会先问一句：如果家里暂时不催，你现在还会想通过相亲认识一个可以认真发展的人吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23198,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.34,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tianshu-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "一直是家里催我结婚，我自己还没想清楚。纠结相亲对象该比我大还是比我小。想看天书从这种情况入手的原片。",
+      "host": "tianshu",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "1b1b1087691d0c0f5173094b3c54c77e87d03d5df60d3dde2bc955c9af2ac356",
+      "selection": null,
+      "displayed_reply": "家里催得紧，你自己还在想要不要结婚，这时候很容易先卡在“找比我大的还是小的”上。我手头没有和你这个处境贴近的天书原片。我们可以先聊一件事：如果家里暂时不催，你现在还会想去相亲、认识一个可以慢慢相处的人吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23198,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 101,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.77,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tianshu-added",
+      "arm": "0.2.9",
+      "exact_reference_link": false,
+      "question": "一直是家里催我结婚，我自己还没想清楚。纠结相亲对象该比我大还是比我小。想看天书从这种情况入手的原片。",
+      "host": "tianshu",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "1b1b1087691d0c0f5173094b3c54c77e87d03d5df60d3dde2bc955c9af2ac356",
+      "selection": null,
+      "displayed_reply": "家里催得紧，自己还没想清楚，就容易先纠结相亲对象该比你大还是比你小。我手头没有找到贴合你这个情况的天书原片。先顺着天书的聊法问一句，如果家里暂时不催，你现在还愿意去相亲认识人吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23198,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 92,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.48,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "有人卖一套聊天套路，说靠几句撩人的话就能让心仪的人动心。老林有没有讲过这种恋爱公式的原片？",
+      "host": "laolin",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "ce6915b1edef8597682498949529d04c09e97c6ee3e4a9316468b66a1f8b2c0b",
+      "selection": null,
+      "displayed_reply": "这次没找到老林讲这种「几句撩人的话就能让人动心」的原片。一句话可以让对方更好接话，但聊得顺和动心是两回事。要是你正犹豫要不要买，可以贴一句对方公开展示的话术，我们看看放在你们的聊天里会不会自然。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23190,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.96,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "有人卖一套聊天套路，说靠几句撩人的话就能让心仪的人动心。老林有没有讲过这种恋爱公式的原片？",
+      "host": "laolin",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "ce6915b1edef8597682498949529d04c09e97c6ee3e4a9316468b66a1f8b2c0b",
+      "selection": null,
+      "displayed_reply": "我这儿没有找到能确认是老林讲“恋爱公式”的原片。几句俏皮话可以让开场轻松些，但对方会不会动心，光靠话术保证不了。你要是有那套话术里的一句，可以发来，我们看看放到真实聊天里，对方会怎么接。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23192,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 93,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.06,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "有人卖一套聊天套路，说靠几句撩人的话就能让心仪的人动心。老林有没有讲过这种恋爱公式的原片？",
+      "host": "laolin",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV13W421R7Zx",
+          "host": "老林的情感研究室",
+          "title": "直播连麦 怎么跟新加微信的人推进关系？",
+          "url": "https://www.bilibili.com/video/BV13W421R7Zx/",
+          "start_seconds": 179.5,
+          "end_seconds": 220.44,
+          "situation": "来访者想知道用了暧昧话语和一些技巧，对方是不是就会产生喜欢。",
+          "move": "把能表达好感的行为和对方本身的偏好区分开，指出不存在能让任何人心动的统一话术。",
+          "summary": "来访者想知道用了暧昧话语和一些技巧，对方是不是就会产生喜欢。把能表达好感的行为和对方本身的偏好区分开，指出不存在能让任何人心动的统一话术。",
+          "timestamp_url": "https://www.bilibili.com/video/BV13W421R7Zx/?t=179",
+          "score": 18.71852,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "d4b352f91b399ec032f0d16cfec621bea8d3acb881c5e33e57a9b100a8b05bb8",
+      "selection": "bili-BV13W421R7Zx",
+      "displayed_reply": "有一段很贴近。连麦里也有人问，用几句暧昧的话、加一点聊天技巧，能不能让对方喜欢上自己。这段聊到，话术可以表达好感，对方会不会心动还要看对方自己的感受和偏好。片段是根据机器转写定位的，还没人工核听。\n\n[看相似连麦原片 02:59](https://www.bilibili.com/video/BV13W421R7Zx/?t=179)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23289,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.2,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "我们暧昧到一起去看过日出还牵了手，我现在想退一点。童锦程有没有那种先问两个人到哪一步的片段？",
+      "host": "tong",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "147a0d9072e5b88b9d75adeca154502fca5930da44a7908a680f257f3026c252",
+      "selection": null,
+      "displayed_reply": "一起看过日出，也牵过手，现在想把节奏放慢一点，也很正常。这次没找到童锦程先问两个人走到哪一步的片段。我们可以先从这儿聊：牵手之后，你们有聊过想不想往恋爱方向走吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23193,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.05,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "我们暧昧到一起去看过日出还牵了手，我现在想退一点。童锦程有没有那种先问两个人到哪一步的片段？",
+      "host": "tong",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "147a0d9072e5b88b9d75adeca154502fca5930da44a7908a680f257f3026c252",
+      "selection": null,
+      "displayed_reply": "一起看了日出，也牵过手，现在想退一点，确实容易纠结怎么开口。这次没找到童锦程先问“两个人到哪一步了”的相似片段。你们牵手之后，有没有聊过彼此想不想继续发展？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23193,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 4.98,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "我们暧昧到一起去看过日出还牵了手，我现在想退一点。童锦程有没有那种先问两个人到哪一步的片段？",
+      "host": "tong",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1tpLwzgEKS",
+          "host": "童锦程",
+          "title": "童锦程告诉你一段感情不要随便的开始，开始了就不要随便的结束",
+          "url": "https://www.bilibili.com/video/BV1tpLwzgEKS/",
+          "start_seconds": 0.0,
+          "end_seconds": 18.18,
+          "situation": "来访者说暧昧上头后想抽身，还没讲清双方实际相处到哪一步。",
+          "move": "先问暧昧到了什么程度，再听对方描述见面和已有的亲密接触。",
+          "summary": "来访者说暧昧上头后想抽身，还没讲清双方实际相处到哪一步。先问暧昧到了什么程度，再听对方描述见面和已有的亲密接触。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1tpLwzgEKS/?t=0",
+          "score": 26.518621,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "015c3a33d66425761e510c8f002ffbb33eb0f7af2b72eda4fe780b76067b178d",
+      "selection": "bili-BV1tpLwzgEKS",
+      "displayed_reply": "一起看过日出，还牵了手，现在想退一点，确实会有点不好开口。有个童锦程的片段跟你问的挺像，来访者也是暧昧上头后想抽身，片段里先问两个人到了哪一步，再听对方讲见面和亲密接触的细节。这段是根据机器字幕找到的，还没人工核听。回到你这儿，你想退一点，是想把节奏放慢，还是已经不想往恋爱方向走了？\n\n[看相似连麦原片 00:00](https://www.bilibili.com/video/BV1tpLwzgEKS/?t=0)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23283,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 149,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.35,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "头一回约会我们AA了，回家后我在想，怎么从他有没有再约吃饭判断他想不想继续。想看看曲曲举过类似的例子吗？",
+      "host": "ququ",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "ee143c547ec206b9ea3e2e22ac8b5c1b8791821821afe15b9b7add57ed0eb004",
+      "selection": null,
+      "displayed_reply": "第一次见完，回家琢磨他还会不会约你，挺能理解。手头没有找到曲曲讲过的相似片段。就你这次来说，AA本身说明不了他想不想继续。更值得看的是，他会不会主动提下次见面，再跟你把时间定下来。到现在，他有主动提过再见吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23199,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 102,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.26,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "头一回约会我们AA了，回家后我在想，怎么从他有没有再约吃饭判断他想不想继续。想看看曲曲举过类似的例子吗？",
+      "host": "ququ",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "ee143c547ec206b9ea3e2e22ac8b5c1b8791821821afe15b9b7add57ed0eb004",
+      "selection": null,
+      "displayed_reply": "第一次见完，回家琢磨他还想不想继续，挺正常的。我手头没有曲曲讲过的相似片段。那顿饭 AA 这件事单独看，判断不了他的意愿。更值得看的是，他后来有没有主动提再见，还愿意把时间定下来。见完以后，他有主动提过下次见吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23197,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 102,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.07,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "头一回约会我们AA了，回家后我在想，怎么从他有没有再约吃饭判断他想不想继续。想看看曲曲举过类似的例子吗？",
+      "host": "ququ",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "host": "曲曲",
+          "title": "恋爱情感经历比较少的女生如何在相亲的时候提升对方的好感度？1.外表好看2.对人友善3.初次见面时主动买小单或者提出AA.#AA #相亲记 #恋爱小技巧",
+          "url": "https://www.bilibili.com/video/BV1WQeCzNEau/",
+          "start_seconds": 261.26,
+          "end_seconds": 273.26,
+          "situation": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。",
+          "move": "举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "summary": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261",
+          "score": 19.249313,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "1f4f645078b9b1449bc6572f84400e37c05b3da6ba9627f26f4ebab82693ab2c",
+      "selection": "bili-BV1WQeCzNEau",
+      "displayed_reply": "第一次见完还想知道对方有没有兴趣，回家后琢磨这些细节挺正常的。我找到一段标为曲曲观点分享的片段，字幕还没人工核对。它举的例子跟你很像，都是第一次约会各自付账后，看对方会不会主动提下次一起吃饭。\n\nAA 本身很难说明他的态度。他要是主动提了，还愿意一起把日子定下来，这更能看出他想再见你。要是暂时没约，先留一点余地。你们回家以后，他有主动提过下次见面吗？\n\n[看相似连麦原片 04:21](https://www.bilibili.com/video/BV1WQeCzNEau/?t=261)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23279,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 172,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.99,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "相亲约会结束要去另一个地方，对方想打车，我想坐地铁省点。有没有杰哥那类把当时怎么决定问清楚的原片？",
+      "host": "jiege",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "76e01f20dd9b80b83cb967fdb88e95774482d12693bf9ff5dac4ea3d04042256",
+      "selection": null,
+      "displayed_reply": "你想看的是杰哥怎么把当时的决定问清楚。这次没找到贴合的原片。咱们可以先从那一刻聊起：对方说想打车时，你是怎么接的，后来你们怎么定下来的？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23192,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 4.52,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "相亲约会结束要去另一个地方，对方想打车，我想坐地铁省点。有没有杰哥那类把当时怎么决定问清楚的原片？",
+      "host": "jiege",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "76e01f20dd9b80b83cb967fdb88e95774482d12693bf9ff5dac4ea3d04042256",
+      "selection": null,
+      "displayed_reply": "这次没找到贴合这个场景的杰哥原片。我们可以先把当时那一步捋清楚：你有跟对方说想坐地铁省点吗？如果说了，对方当时怎么接的？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23194,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 72,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 4.65,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "相亲约会结束要去另一个地方，对方想打车，我想坐地铁省点。有没有杰哥那类把当时怎么决定问清楚的原片？",
+      "host": "jiege",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV12L796CEd9",
+          "host": "杰哥相亲",
+          "title": "年薪50个跟女生约会连打车钱和饮料钱都不愿意出？",
+          "url": "https://www.bilibili.com/video/BV12L796CEd9/",
+          "start_seconds": 94.94,
+          "end_seconds": 148.98,
+          "situation": "相亲约会时对两处之间坐地铁还是打车有分歧，来访者觉得应该能省则省。",
+          "move": "先把听来的反馈当作待核实信息，请来访者说明当时怎么选，再把交通开销与对长期关系的投入分开。",
+          "summary": "相亲约会时对两处之间坐地铁还是打车有分歧，来访者觉得应该能省则省。先把听来的反馈当作待核实信息，请来访者说明当时怎么选，再把交通开销与对长期关系的投入分开。",
+          "timestamp_url": "https://www.bilibili.com/video/BV12L796CEd9/?t=94",
+          "score": 28.551331,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "54ae4020e2c43e9081503437ddcd882b633f3a010f5aa405683a724a1bfaabb8",
+      "selection": "bili-BV12L796CEd9",
+      "displayed_reply": "有一段杰哥相亲的原片，跟你这事挺像。也是相亲约会换地方时，一个想打车，一个想坐地铁省点，聊到了当时是怎么做决定的。这段是按机器转写找到的，还没人工核听。你们当时最后是怎么定下来的？\n\n[看相似连麦原片 01:34](https://www.bilibili.com/video/BV12L796CEd9/?t=94)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23296,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 101,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.65,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "线上认识的人只看过我的社交资料和照片，线下朋友却会从我平时的圈子认识我。有没有梵公子聊第一印象随认识渠道变化的原片？",
+      "host": "fan",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "675fcbd7abd0477af5c7817a7ec56d582fa0c77de8323a8a54f4c3376b731a13",
+      "selection": null,
+      "displayed_reply": "线上认识你的人先看到照片和资料，线下朋友还会看到你平时跟谁来往、怎么跟人相处，第一印象确实可能不一样。我手头没有找到梵公子专门聊这个的原片。你是在哪次互动里，最明显地感觉到两边对你的印象有落差？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23196,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 96,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.67,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "线上认识的人只看过我的社交资料和照片，线下朋友却会从我平时的圈子认识我。有没有梵公子聊第一印象随认识渠道变化的原片？",
+      "host": "fan",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "675fcbd7abd0477af5c7817a7ec56d582fa0c77de8323a8a54f4c3376b731a13",
+      "selection": null,
+      "displayed_reply": "线上认识你的人先看到的是资料和照片，线下朋友还会看到你平时跟谁来往、怎么和人相处。我手头没有找到梵公子专门聊这个差别的原片。你是已经收到过线上线下不一样的反馈，还是想知道线上资料漏掉了哪些线下容易被看见的特点？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23200,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 99,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.14,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "线上认识的人只看过我的社交资料和照片，线下朋友却会从我平时的圈子认识我。有没有梵公子聊第一印象随认识渠道变化的原片？",
+      "host": "fan",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1EdXsBiEfd",
+          "host": "梵公子社会学",
+          "title": "现实社交识人辨人就是三秒完播率｜形象符合 + 强者背书，才是不被淘汰的核心｜真正厉害的人，看你能否撕裂舒适区｜能写会算，才是中式社交制胜法宝",
+          "url": "https://www.bilibili.com/video/BV1EdXsBiEfd/",
+          "start_seconds": 165.84,
+          "end_seconds": 186.24,
+          "situation": "观点分享讨论初次认识时，线上个人资料和线下场景分别传递哪些印象。",
+          "move": "把信息按认识渠道分开，举例区分照片呈现和现实圈子、工作背景。",
+          "summary": "观点分享讨论初次认识时，线上个人资料和线下场景分别传递哪些印象。把信息按认识渠道分开，举例区分照片呈现和现实圈子、工作背景。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165",
+          "score": 52.734104,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "684866c8a26d91a2d4a0e310b5636443c947bc546a99f52d839ebbe267169a3f",
+      "selection": "bili-BV1EdXsBiEfd",
+      "displayed_reply": "有一段跟你说的很像。你在线上是先被资料和照片介绍的，线下朋友则会从你平时来往的圈子慢慢认识你。这段观点分享聊的正是这两种渠道各自会给人留下什么第一印象。它是第三方发布的切片，说话人还待核实。\n\n[看相似连麦原片 02:45](https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23284,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 107,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.41,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-added",
+      "arm": "no-rag",
+      "exact_reference_link": false,
+      "question": "我和婆婆没住在同一个屋里，却经常碰面。她近来老当面数落我，我也说不清究竟卡在哪件小事。有类似的郭律连麦吗？",
+      "host": "guolu",
+      "with_retrieval": false,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "a3bd84fead8e91f041bd16f183ec32bc728d2edb31f67bb7d7b2ca542cd6b368",
+      "selection": null,
+      "displayed_reply": "分开住却经常碰面，还动不动被当面数落，确实容易觉得委屈。这次没找到情境相近的郭律连麦。你还记得她最近一次当面说了句什么吗？大概的意思就行。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23199,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 80,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 4.99,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-added",
+      "arm": "0.2.8",
+      "exact_reference_link": false,
+      "question": "我和婆婆没住在同一个屋里，却经常碰面。她近来老当面数落我，我也说不清究竟卡在哪件小事。有类似的郭律连麦吗？",
+      "host": "guolu",
+      "with_retrieval": true,
+      "retrieved": [],
+      "material_characters": 3891,
+      "prompt_sha256": "a3bd84fead8e91f041bd16f183ec32bc728d2edb31f67bb7d7b2ca542cd6b368",
+      "selection": null,
+      "displayed_reply": "虽然分开住，但碰面时老被婆婆当面数落，换谁都容易觉得憋屈。这次没找到情境相近的郭律连麦。我们可以先从最近一次说起，你还记得她当时是怎么开口的吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23201,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 80,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.83,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-added",
+      "arm": "0.2.9",
+      "exact_reference_link": true,
+      "question": "我和婆婆没住在同一个屋里，却经常碰面。她近来老当面数落我，我也说不清究竟卡在哪件小事。有类似的郭律连麦吗？",
+      "host": "guolu",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1qmxe6bEug",
+          "host": "郭延娇",
+          "title": "连麦5: 婆婆当面数落、9岁孩子也敢指责妈妈——郭老师：你现在受婆婆的气，将来受孩子的气，因为没人尊重你",
+          "url": "https://www.bilibili.com/video/BV1qmxe6bEug/",
+          "start_seconds": 33.12,
+          "end_seconds": 59.6,
+          "situation": "来访者说婆媳关系总体不错，但最近常被婆婆当面数落。",
+          "move": "先问具体哪里出了问题，再核对是否同住、平时多久见一次，把笼统的关系判断落到接触场景。",
+          "summary": "来访者说婆媳关系总体不错，但最近常被婆婆当面数落。先问具体哪里出了问题，再核对是否同住、平时多久见一次，把笼统的关系判断落到接触场景。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1qmxe6bEug/?t=33",
+          "score": 18.383586,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 3891,
+      "prompt_sha256": "986dc7011a5402ddc9210daf531f1ea346c9d7128b6955b5beae88d21398280f",
+      "selection": "bili-BV1qmxe6bEug",
+      "displayed_reply": "隔三差五碰面，还常被当面数落，次数多了，确实容易说不清是哪句话最让你难受。有一段郭律连麦跟你的情况挺像，来访者也提到最近常被婆婆当面数落，聊到后来就把平时怎么碰面、见得多不多问具体了。你也可以先挑最近一次说说，她当时是怎么开口的？\n\n[看相似连麦原片 00:33](https://www.bilibili.com/video/BV1qmxe6bEug/?t=33)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23291,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.4,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

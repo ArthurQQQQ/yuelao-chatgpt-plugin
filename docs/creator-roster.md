@@ -1,12 +1,12 @@
 # 月老与情感创作者名录 / Creator roster
 
-This roster maps public Chinese-language matchmaking and relationship content by format and conversational approach. It covers eight selectable AI styles, including three direct-pick trials, and twenty research candidates. Inclusion reflects the range of approaches covered. All styles are AI interpretations inspired by public material.
+This roster maps public Chinese-language matchmaking and relationship content by format and conversational approach. It covers eight selectable AI styles, including three trial styles, and twenty research candidates. Inclusion reflects the range of approaches covered. All styles are AI interpretations inspired by public material.
 
 名录按提问方式、内容形式和适用情境选人。这里共有 **28 个条目**，其中 **8 种聊法可点名试用，20 位是研究候选**。公开样本用于确认是谁发布、内容是什么形式、可以研究哪个对话动作。名单顺序不代表人气。账号自发内容也可能经过剪辑或演绎。
 
 ## 可选聊法 / Selectable styles
 
-**AY、TS、LL、TJ、QQ** 参与三道场景题匹配。**JG、FG、GL** 是点名试聊，试聊片段的说话人与时码仍待核听。以下“第一步”是插件的接法设计。
+新版四道场景题覆盖全部八种聊法。**JG、FG、GL** 为试用聊法，试聊片段的说话人与时码仍待核听。以下“第一步”是插件的接法设计。
 
 | 代码 / Code | 参考对象 / Creator | 第一轮可做什么 / First move | 来源 / Source |
 | --- | --- | --- | --- |

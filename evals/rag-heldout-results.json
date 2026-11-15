@@ -1,0 +1,2873 @@
+{
+  "scope": "Frozen paraphrased text queries over two release snapshots. Positive source clips or cards may be part of development; this is not held-out source generalization. Exact-source exclusion is a negative control.",
+  "fixtures_sha256": "5c283a88279843f9633d4eee21eff99a601bf7e16d1cd951946f6da17df3a10d",
+  "engine_sha256": "40987ff5c62c10802cc3ebdc147b442c65b35847902ae108bc6e7f50d57a851c",
+  "snapshots": {
+    "v0.2.8": {
+      "sha256": "90afa577f258c85405f792fc68a2f6400c8458d7c8515ae7f462b185b1281473",
+      "sources": 25,
+      "cards": 26,
+      "cards_by_host": {
+        "老林的情感研究室": 5,
+        "郭延娇": 1,
+        "鳌烨": 10,
+        "天书定位": 6,
+        "曲曲": 1,
+        "梵公子社会学": 1,
+        "童锦程": 1,
+        "杰哥相亲": 1
+      }
+    },
+    "v0.2.9": {
+      "sha256": "1c937633f8f76ca10543dd52a9d5cf4a62ba3d01126aeef65c9e757ca9a66b70",
+      "sources": 29,
+      "cards": 37,
+      "cards_by_host": {
+        "杰哥相亲": 2,
+        "老林的情感研究室": 7,
+        "郭延娇": 2,
+        "鳌烨": 12,
+        "梵公子社会学": 2,
+        "天书定位": 8,
+        "曲曲": 2,
+        "童锦程": 2
+      }
+    }
+  },
+  "fixtures": [
+    {
+      "id": "aoye-added",
+      "host": "aoye",
+      "kind": "added",
+      "query": "我一直靠朋友零星介绍，压根没报过本地单身联谊，也不知道我喜欢的那类人会不会对我有兴趣。有没有原片讲怎么去线下摸摸底？",
+      "target": "bili-BV1qdEL6REVT",
+      "window": [
+        578,
+        592
+      ],
+      "reference": "先参加正规本地活动，拿现场主动交换联系方式等事实校准预期。"
+    },
+    {
+      "id": "aoye-retained",
+      "host": "aoye",
+      "kind": "retained",
+      "query": "我在海外工作做得不错，但想回北京找伴侣。有没有原片教我该回国还是把现在的事业留住？",
+      "target": "bili-BV1TW9FBjEvp",
+      "window": [
+        40,
+        50
+      ],
+      "reference": "用已有的择偶进展与回去会损失的事业来比较。"
+    },
+    {
+      "id": "aoye-related-no-match",
+      "host": "aoye",
+      "kind": "related-no-match",
+      "query": "相亲认识的人用合照威胁我继续交往，我没同意把照片发出去。有讲过被威胁后怎样处理照片传播的原片吗？",
+      "target": null,
+      "reference": "没有关于照片传播威胁和关系胁迫的具体案例。"
+    },
+    {
+      "id": "tianshu-added",
+      "host": "tianshu",
+      "kind": "added",
+      "query": "一直是家里催我结婚，我自己还没想清楚。纠结相亲对象该比我大还是比我小。想看天书从这种情况入手的原片。",
+      "target": "bili-BV1XYW86vEEz",
+      "window": [
+        412,
+        420
+      ],
+      "reference": "比较对象年龄前先问为什么结婚，是不是自己真的想。"
+    },
+    {
+      "id": "tianshu-retained",
+      "host": "tianshu",
+      "kind": "retained",
+      "query": "两家家境摆在一起差得比较大，我怕婚后生活开销和投资观念冲突。有过这样的连麦吗？",
+      "target": "bili-BV1e4W86zEmX",
+      "window": [
+        102,
+        108
+      ],
+      "reference": "核对双方预期生活水平、家庭资源口径和伴侣条件。"
+    },
+    {
+      "id": "tianshu-related-no-match",
+      "host": "tianshu",
+      "kind": "related-no-match",
+      "query": "相亲时对方让我扫二维码替他做投资，说亏损我负责。有没有聊过这种冒充投资平台开户诈骗的原片？",
+      "target": null,
+      "reference": "没有关于扫码平台开户诈骗的案例。资产口径或花钱分歧不足以给片。"
+    },
+    {
+      "id": "laolin-added",
+      "host": "laolin",
+      "kind": "added",
+      "query": "有人卖一套聊天套路，说靠几句撩人的话就能让心仪的人动心。老林有没有讲过这种恋爱公式的原片？",
+      "target": "bili-BV13W421R7Zx",
+      "window": [
+        177,
+        185
+      ],
+      "reference": "能表达喜欢的做法，与对方是否喜欢是两回事。没有统一公式。"
+    },
+    {
+      "id": "laolin-retained",
+      "host": "laolin",
+      "kind": "retained",
+      "query": "伴侣新单位太忙，消息经常拖很久，更难受的是我的认真分享也常被敷衍。我想看接近这个处境的连麦。",
+      "target": "bili-BV1Yi421a7sj",
+      "window": [
+        81,
+        88
+      ],
+      "reference": "先确认想收到什么样的回应，区分回复速度与感到被听见。"
+    },
+    {
+      "id": "laolin-related-no-match",
+      "host": "laolin",
+      "kind": "related-no-match",
+      "query": "我跟对象沟通时他一直用我的账号发消息，连手机都不肯还。有没有具体讲账号被控制的老林连麦？",
+      "target": null,
+      "reference": "没有关于伴侣控制设备或冒用账号的案例。"
+    },
+    {
+      "id": "tong-added",
+      "host": "tong",
+      "kind": "added",
+      "query": "我们暧昧到一起去看过日出还牵了手，我现在想退一点。童锦程有没有那种先问两个人到哪一步的片段？",
+      "target": "bili-BV1tpLwzgEKS",
+      "window": [
+        0,
+        4
+      ],
+      "reference": "接在想退之前问暧昧到了哪一步，再听说具体见面和接触。"
+    },
+    {
+      "id": "tong-retained",
+      "host": "tong",
+      "kind": "retained",
+      "query": "现在我对他感情变淡，他倒还是喜欢我，一直等我。我想找童锦程讲想退出时怎么跟对方摊开说的片段。",
+      "target": "bili-BV1tpLwzgEKS",
+      "window": [
+        27,
+        33
+      ],
+      "reference": "确认双方意愿不同后建议把话说明，别让对方一直等。"
+    },
+    {
+      "id": "tong-related-no-match",
+      "host": "tong",
+      "kind": "related-no-match",
+      "query": "两个人刚开始暧昧，对方要我和他一起从高处跳下才肯信任我。有童锦程讲拒绝这种危险要求的原片吗？",
+      "target": null,
+      "reference": "没有关于危险动作或以危险为条件逼迫对方的案例。"
+    },
+    {
+      "id": "ququ-added",
+      "host": "ququ",
+      "kind": "added",
+      "query": "头一回约会我们AA了，回家后我在想，怎么从他有没有再约吃饭判断他想不想继续。想看看曲曲举过类似的例子吗？",
+      "target": "bili-BV1WQeCzNEau",
+      "window": [
+        258,
+        266
+      ],
+      "reference": "观察AA之后对方是否另提下一次邀约。这个片段是公开观点示例。"
+    },
+    {
+      "id": "ququ-retained",
+      "host": "ququ",
+      "kind": "retained",
+      "query": "刚开始他可主动了，后来越来越冷。我又问了一次能不能周末碰面，消息发出去他没有回。想看曲曲遇到过这种吗？",
+      "target": "bili-BV1mnd1YHEq7",
+      "window": [
+        270,
+        277
+      ],
+      "reference": "已有一次实际再次邀约且无回应，拿事实判断是否继续投入。"
+    },
+    {
+      "id": "ququ-related-no-match",
+      "host": "ququ",
+      "kind": "related-no-match",
+      "query": "第一次约会发生餐馆食物过敏，后来我们都去医院。我想看曲曲聊谁应该先联系餐厅处理的原片。",
+      "target": null,
+      "reference": "没有关于约会食物过敏事故的案例。初次见面付款只共享场景词。"
+    },
+    {
+      "id": "jiege-added",
+      "host": "jiege",
+      "kind": "added",
+      "query": "相亲约会结束要去另一个地方，对方想打车，我想坐地铁省点。有没有杰哥那类把当时怎么决定问清楚的原片？",
+      "target": "bili-BV12L796CEd9",
+      "window": [
+        91,
+        103
+      ],
+      "reference": "问清双方当时如何选择交通方式和为什么，区分小额费用与长期承诺。"
+    },
+    {
+      "id": "jiege-retained",
+      "host": "jiege",
+      "kind": "retained",
+      "query": "希望结婚后由我管对方的工资才安心，但我说不清是为了日常家用还是存钱投资。有过像这样的杰哥连麦吗？",
+      "target": "bili-BV1wtwLzTEa4",
+      "window": [
+        26,
+        33
+      ],
+      "reference": "先问管工资为了解决什么，再区分家庭开支和投资。"
+    },
+    {
+      "id": "jiege-related-no-match",
+      "host": "jiege",
+      "kind": "related-no-match",
+      "query": "婚后我看见工资流水里有一笔对方冒签的贷款。找杰哥具体聊过怎样核实冒名申请贷款的那种原片。",
+      "target": null,
+      "reference": "没有关于冒名贷款核实的案例。工资分工不能替代该主题。"
+    },
+    {
+      "id": "fan-added",
+      "host": "fan",
+      "kind": "added",
+      "query": "线上认识的人只看过我的社交资料和照片，线下朋友却会从我平时的圈子认识我。有没有梵公子聊第一印象随认识渠道变化的原片？",
+      "target": "bili-BV1EdXsBiEfd",
+      "window": [
+        162,
+        172
+      ],
+      "reference": "分开线上照片资料与通过现实圈子、职业了解一个人的线索。公开观点分享。"
+    },
+    {
+      "id": "fan-retained",
+      "host": "fan",
+      "kind": "retained",
+      "query": "我很在意别人评价我的长相，想问朋友我需不需要调整外形甚至整容。有梵公子相关的类似视频吗？",
+      "target": "bili-BV1pPeUzyEDr",
+      "window": [
+        0,
+        3
+      ],
+      "reference": "有第三方开头询问外形调整的片段。语气和说话人待核，不给医学建议。"
+    },
+    {
+      "id": "fan-related-no-match",
+      "host": "fan",
+      "kind": "related-no-match",
+      "query": "我在交友软件上发现有人偷我的外形照去假扮我。我想看梵公子讲打击盗图冒充的原片。",
+      "target": null,
+      "reference": "没有盗图或冒充帐号的具体案例。一般的形象和照片观点不足以推荐。"
+    },
+    {
+      "id": "guolu-added",
+      "host": "guolu",
+      "kind": "added",
+      "query": "我和婆婆没住在同一个屋里，却经常碰面。她近来老当面数落我，我也说不清究竟卡在哪件小事。有类似的郭律连麦吗？",
+      "target": "bili-BV1qmxe6bEug",
+      "window": [
+        31,
+        40
+      ],
+      "reference": "问具体发生了什么、是否同住以及通常见面频率。"
+    },
+    {
+      "id": "guolu-retained",
+      "host": "guolu",
+      "kind": "retained",
+      "query": "我确定不要孩子，相亲刚认识就想摸清对方想不想生育，有没有郭老师讲怎么开口的片段？",
+      "target": "bili-BV13Zxe6QEv6",
+      "window": [
+        155,
+        164
+      ],
+      "reference": "建议在刚接触时直接问对方要不要小孩。"
+    },
+    {
+      "id": "guolu-related-no-match",
+      "host": "guolu",
+      "kind": "related-no-match",
+      "query": "最近婆婆在家跌倒，保险公司说跌倒因为另一种病不理赔。我想看郭律具体聊养老保险理赔条款的原片。",
+      "target": null,
+      "reference": "没有这一类养老保险理赔案例。婆媳往来只共享人物称呼。"
+    },
+    {
+      "id": "aoye-private-archive-no-match",
+      "host": "aoye",
+      "kind": "excluded-source",
+      "query": "找一期具体的鳌烨原片。来访者是北京互联网做产品的，之前单身很久，开始期待婚姻，聊到自己有纹身。只想找这一个来访。",
+      "target": null,
+      "excluded_source": "bili-BV1LTd5BgEQw",
+      "reference": "这个确切原片保留作回放，未进两版产品检索。其他同类型连麦不能顶替。"
+    },
+    {
+      "id": "aoye-off-topic",
+      "host": "aoye",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "tianshu-off-topic",
+      "host": "tianshu",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "laolin-off-topic",
+      "host": "laolin",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "ququ-off-topic",
+      "host": "ququ",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "tong-off-topic",
+      "host": "tong",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "jiege-off-topic",
+      "host": "jiege",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "fan-off-topic",
+      "host": "fan",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    },
+    {
+      "id": "guolu-off-topic",
+      "host": "guolu",
+      "kind": "off-topic",
+      "query": "我想找一段讲面包发酵后如何判断面团能不能进烤箱的原片。",
+      "target": null,
+      "reference": "烘焙情境与关系案例库无关，返回空结果。"
+    }
+  ],
+  "overall": {
+    "no-rag": {
+      "added": [
+        0,
+        8
+      ],
+      "retained": [
+        0,
+        8
+      ],
+      "related-no-match": [
+        8,
+        8
+      ],
+      "off-topic": [
+        8,
+        8
+      ],
+      "excluded-source": [
+        1,
+        1
+      ],
+      "top1_source": [
+        0,
+        16
+      ],
+      "top2_source": [
+        0,
+        16
+      ],
+      "top1_action": [
+        0,
+        16
+      ],
+      "top2_action": [
+        0,
+        16
+      ]
+    },
+    "v0.2.8": {
+      "added": [
+        0,
+        8
+      ],
+      "retained": [
+        8,
+        8
+      ],
+      "related-no-match": [
+        8,
+        8
+      ],
+      "off-topic": [
+        8,
+        8
+      ],
+      "excluded-source": [
+        1,
+        1
+      ],
+      "top1_source": [
+        8,
+        16
+      ],
+      "top2_source": [
+        8,
+        16
+      ],
+      "top1_action": [
+        8,
+        16
+      ],
+      "top2_action": [
+        8,
+        16
+      ]
+    },
+    "v0.2.9": {
+      "added": [
+        7,
+        8
+      ],
+      "retained": [
+        8,
+        8
+      ],
+      "related-no-match": [
+        6,
+        8
+      ],
+      "off-topic": [
+        8,
+        8
+      ],
+      "excluded-source": [
+        1,
+        1
+      ],
+      "top1_source": [
+        15,
+        16
+      ],
+      "top2_source": [
+        15,
+        16
+      ],
+      "top1_action": [
+        15,
+        16
+      ],
+      "top2_action": [
+        15,
+        16
+      ]
+    }
+  },
+  "by_host": {
+    "aoye": {
+      "label": "鳌烨",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            1,
+            1
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            1,
+            1
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            1,
+            1
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "tianshu": {
+      "label": "天书定位",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    "laolin": {
+      "label": "老林的情感研究室",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "ququ": {
+      "label": "曲曲",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            0,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "tong": {
+      "label": "童锦程",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "jiege": {
+      "label": "杰哥相亲",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "fan": {
+      "label": "梵公子社会学",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    },
+    "guolu": {
+      "label": "郭延娇",
+      "metrics": {
+        "no-rag": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            0,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            0,
+            2
+          ],
+          "top2_source": [
+            0,
+            2
+          ],
+          "top1_action": [
+            0,
+            2
+          ],
+          "top2_action": [
+            0,
+            2
+          ]
+        },
+        "v0.2.8": {
+          "added": [
+            0,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            1,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            1,
+            2
+          ],
+          "top2_source": [
+            1,
+            2
+          ],
+          "top1_action": [
+            1,
+            2
+          ],
+          "top2_action": [
+            1,
+            2
+          ]
+        },
+        "v0.2.9": {
+          "added": [
+            1,
+            1
+          ],
+          "retained": [
+            1,
+            1
+          ],
+          "related-no-match": [
+            0,
+            1
+          ],
+          "off-topic": [
+            1,
+            1
+          ],
+          "excluded-source": [
+            0,
+            0
+          ],
+          "top1_source": [
+            2,
+            2
+          ],
+          "top2_source": [
+            2,
+            2
+          ],
+          "top1_action": [
+            2,
+            2
+          ],
+          "top2_action": [
+            2,
+            2
+          ]
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "fixture": "aoye-added",
+      "host": "aoye",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-added",
+      "host": "aoye",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-added",
+      "host": "aoye",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1qdEL6REVT",
+          "host": "鳌烨",
+          "start_seconds": 580.22,
+          "end_seconds": 601.12,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qdEL6REVT/?t=580"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-retained",
+      "host": "aoye",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-retained",
+      "host": "aoye",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1TW9FBjEvp",
+          "host": "鳌烨",
+          "start_seconds": 41.0,
+          "end_seconds": 98.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1TW9FBjEvp/?t=41"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-retained",
+      "host": "aoye",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1TW9FBjEvp",
+          "host": "鳌烨",
+          "start_seconds": 41.0,
+          "end_seconds": 98.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1TW9FBjEvp/?t=41"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-related-no-match",
+      "host": "aoye",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-related-no-match",
+      "host": "aoye",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-related-no-match",
+      "host": "aoye",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-added",
+      "host": "tianshu",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-added",
+      "host": "tianshu",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-added",
+      "host": "tianshu",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-retained",
+      "host": "tianshu",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-retained",
+      "host": "tianshu",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1e4W86zEmX",
+          "host": "天书定位",
+          "start_seconds": 104.0,
+          "end_seconds": 160.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104"
+        }
+      ]
+    },
+    {
+      "fixture": "tianshu-retained",
+      "host": "tianshu",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1e4W86zEmX",
+          "host": "天书定位",
+          "start_seconds": 104.0,
+          "end_seconds": 160.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1e4W86zEmX/?t=104"
+        }
+      ]
+    },
+    {
+      "fixture": "tianshu-related-no-match",
+      "host": "tianshu",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-related-no-match",
+      "host": "tianshu",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-related-no-match",
+      "host": "tianshu",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-added",
+      "host": "laolin",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-added",
+      "host": "laolin",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-added",
+      "host": "laolin",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV13W421R7Zx",
+          "host": "老林的情感研究室",
+          "start_seconds": 179.5,
+          "end_seconds": 220.44,
+          "timestamp_url": "https://www.bilibili.com/video/BV13W421R7Zx/?t=179"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-retained",
+      "host": "laolin",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-retained",
+      "host": "laolin",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1Yi421a7sj",
+          "host": "老林的情感研究室",
+          "start_seconds": 84.0,
+          "end_seconds": 128.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1Yi421a7sj/?t=84"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-retained",
+      "host": "laolin",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1Yi421a7sj",
+          "host": "老林的情感研究室",
+          "start_seconds": 84.0,
+          "end_seconds": 128.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1Yi421a7sj/?t=84"
+        }
+      ]
+    },
+    {
+      "fixture": "laolin-related-no-match",
+      "host": "laolin",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-related-no-match",
+      "host": "laolin",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-related-no-match",
+      "host": "laolin",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-added",
+      "host": "tong",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-added",
+      "host": "tong",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-added",
+      "host": "tong",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1tpLwzgEKS",
+          "host": "童锦程",
+          "start_seconds": 0.0,
+          "end_seconds": 18.18,
+          "timestamp_url": "https://www.bilibili.com/video/BV1tpLwzgEKS/?t=0"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-retained",
+      "host": "tong",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-retained",
+      "host": "tong",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1tpLwzgEKS",
+          "host": "童锦程",
+          "start_seconds": 29.0,
+          "end_seconds": 52.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1tpLwzgEKS/?t=29"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-retained",
+      "host": "tong",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1tpLwzgEKS",
+          "host": "童锦程",
+          "start_seconds": 29.0,
+          "end_seconds": 52.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1tpLwzgEKS/?t=29"
+        }
+      ]
+    },
+    {
+      "fixture": "tong-related-no-match",
+      "host": "tong",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-related-no-match",
+      "host": "tong",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-related-no-match",
+      "host": "tong",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-added",
+      "host": "ququ",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-added",
+      "host": "ququ",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-added",
+      "host": "ququ",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "host": "曲曲",
+          "start_seconds": 261.26,
+          "end_seconds": 273.26,
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-retained",
+      "host": "ququ",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-retained",
+      "host": "ququ",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1mnd1YHEq7",
+          "host": "曲曲",
+          "start_seconds": 272.0,
+          "end_seconds": 285.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1mnd1YHEq7/?t=272"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-retained",
+      "host": "ququ",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1mnd1YHEq7",
+          "host": "曲曲",
+          "start_seconds": 272.0,
+          "end_seconds": 285.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1mnd1YHEq7/?t=272"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-related-no-match",
+      "host": "ququ",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-related-no-match",
+      "host": "ququ",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-related-no-match",
+      "host": "ququ",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "correct_empty": false
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "host": "曲曲",
+          "start_seconds": 261.26,
+          "end_seconds": 273.26,
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-added",
+      "host": "jiege",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-added",
+      "host": "jiege",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-added",
+      "host": "jiege",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV12L796CEd9",
+          "host": "杰哥相亲",
+          "start_seconds": 94.94,
+          "end_seconds": 148.98,
+          "timestamp_url": "https://www.bilibili.com/video/BV12L796CEd9/?t=94"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-retained",
+      "host": "jiege",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-retained",
+      "host": "jiege",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1wtwLzTEa4",
+          "host": "杰哥相亲",
+          "start_seconds": 28.0,
+          "end_seconds": 44.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1wtwLzTEa4/?t=28"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-retained",
+      "host": "jiege",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1wtwLzTEa4",
+          "host": "杰哥相亲",
+          "start_seconds": 28.0,
+          "end_seconds": 44.0,
+          "timestamp_url": "https://www.bilibili.com/video/BV1wtwLzTEa4/?t=28"
+        }
+      ]
+    },
+    {
+      "fixture": "jiege-related-no-match",
+      "host": "jiege",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-related-no-match",
+      "host": "jiege",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-related-no-match",
+      "host": "jiege",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-added",
+      "host": "fan",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-added",
+      "host": "fan",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-added",
+      "host": "fan",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1EdXsBiEfd",
+          "host": "梵公子社会学",
+          "start_seconds": 165.84,
+          "end_seconds": 186.24,
+          "timestamp_url": "https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-retained",
+      "host": "fan",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-retained",
+      "host": "fan",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1pPeUzyEDr",
+          "host": "梵公子社会学",
+          "start_seconds": 0.0,
+          "end_seconds": 15.34,
+          "timestamp_url": "https://www.bilibili.com/video/BV1pPeUzyEDr/?t=0"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-retained",
+      "host": "fan",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1pPeUzyEDr",
+          "host": "梵公子社会学",
+          "start_seconds": 0.0,
+          "end_seconds": 15.34,
+          "timestamp_url": "https://www.bilibili.com/video/BV1pPeUzyEDr/?t=0"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-related-no-match",
+      "host": "fan",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-related-no-match",
+      "host": "fan",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-related-no-match",
+      "host": "fan",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-added",
+      "host": "guolu",
+      "kind": "added",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-added",
+      "host": "guolu",
+      "kind": "added",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-added",
+      "host": "guolu",
+      "kind": "added",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1qmxe6bEug",
+          "host": "郭延娇",
+          "start_seconds": 33.12,
+          "end_seconds": 59.6,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qmxe6bEug/?t=33"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-retained",
+      "host": "guolu",
+      "kind": "retained",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "top1_source": false,
+        "top2_source": false,
+        "top1_action": false,
+        "top2_action": false
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-retained",
+      "host": "guolu",
+      "kind": "retained",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV13Zxe6QEv6",
+          "host": "郭延娇",
+          "start_seconds": 159.0,
+          "end_seconds": 178.1,
+          "timestamp_url": "https://www.bilibili.com/video/BV13Zxe6QEv6/?t=159"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-retained",
+      "host": "guolu",
+      "kind": "retained",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "top1_source": true,
+        "top2_source": true,
+        "top1_action": true,
+        "top2_action": true
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV13Zxe6QEv6",
+          "host": "郭延娇",
+          "start_seconds": 159.0,
+          "end_seconds": 178.1,
+          "timestamp_url": "https://www.bilibili.com/video/BV13Zxe6QEv6/?t=159"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-related-no-match",
+      "host": "guolu",
+      "kind": "related-no-match",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-related-no-match",
+      "host": "guolu",
+      "kind": "related-no-match",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-related-no-match",
+      "host": "guolu",
+      "kind": "related-no-match",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": false,
+        "correct_empty": false
+      },
+      "candidates": [
+        {
+          "source_id": "bili-BV1qmxe6bEug",
+          "host": "郭延娇",
+          "start_seconds": 33.12,
+          "end_seconds": 59.6,
+          "timestamp_url": "https://www.bilibili.com/video/BV1qmxe6bEug/?t=33"
+        }
+      ]
+    },
+    {
+      "fixture": "aoye-private-archive-no-match",
+      "host": "aoye",
+      "kind": "excluded-source",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-private-archive-no-match",
+      "host": "aoye",
+      "kind": "excluded-source",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-private-archive-no-match",
+      "host": "aoye",
+      "kind": "excluded-source",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-off-topic",
+      "host": "aoye",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-off-topic",
+      "host": "aoye",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "aoye-off-topic",
+      "host": "aoye",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-off-topic",
+      "host": "tianshu",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-off-topic",
+      "host": "tianshu",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tianshu-off-topic",
+      "host": "tianshu",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-off-topic",
+      "host": "laolin",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-off-topic",
+      "host": "laolin",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "laolin-off-topic",
+      "host": "laolin",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-off-topic",
+      "host": "ququ",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-off-topic",
+      "host": "ququ",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "ququ-off-topic",
+      "host": "ququ",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-off-topic",
+      "host": "tong",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-off-topic",
+      "host": "tong",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "tong-off-topic",
+      "host": "tong",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-off-topic",
+      "host": "jiege",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-off-topic",
+      "host": "jiege",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "jiege-off-topic",
+      "host": "jiege",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-off-topic",
+      "host": "fan",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-off-topic",
+      "host": "fan",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "fan-off-topic",
+      "host": "fan",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-off-topic",
+      "host": "guolu",
+      "kind": "off-topic",
+      "arm": "no-rag",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-off-topic",
+      "host": "guolu",
+      "kind": "off-topic",
+      "arm": "v0.2.8",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    },
+    {
+      "fixture": "guolu-off-topic",
+      "host": "guolu",
+      "kind": "off-topic",
+      "arm": "v0.2.9",
+      "checks": {
+        "returned_empty": true,
+        "correct_empty": true
+      },
+      "candidates": []
+    }
+  ]
+}

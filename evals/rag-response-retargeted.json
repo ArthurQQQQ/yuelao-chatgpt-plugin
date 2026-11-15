@@ -1,0 +1,173 @@
+{
+  "scope": "Targeted rerun on known errors, not held-out.",
+  "rows": [
+    {
+      "fixture": "ququ-added",
+      "question": "头一回约会我们AA了，回家后我在想，怎么从他有没有再约吃饭判断他想不想继续。想看看曲曲举过类似的例子吗？",
+      "host": "ququ",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "host": "曲曲",
+          "title": "恋爱情感经历比较少的女生如何在相亲的时候提升对方的好感度？1.外表好看2.对人友善3.初次见面时主动买小单或者提出AA.#AA #相亲记 #恋爱小技巧",
+          "url": "https://www.bilibili.com/video/BV1WQeCzNEau/",
+          "start_seconds": 261.26,
+          "end_seconds": 273.26,
+          "situation": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。",
+          "move": "举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "summary": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261",
+          "score": 19.333963,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 4064,
+      "prompt_sha256": "a001bd7da6cd167b8a0a93b4390d9e486bfe7c46bea2ce15bd53ed89aa1fa0a2",
+      "selection": "bili-BV1WQeCzNEau",
+      "displayed_reply": "第一次约会AA了，回家琢磨他还想不想见，也挺自然。曲曲有段观点分享，讲的就是AA之后，看对方会不会主动提下次一起吃饭，跟你想弄清的事很贴。你可以多看一步：他说完“下次再约”，有没有接着问你哪天有空、把时间定下来？主动把约落实，比一句“改天吃饭”更能说明他愿意继续接触。要是刚见完还没提，也不用急着下结论。\n\n[看观点片段 04:21](https://www.bilibili.com/video/BV1WQeCzNEau/?t=261)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22357,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 153,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.92,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "ququ-related-no-match",
+      "question": "第一次约会发生餐馆食物过敏，后来我们都去医院。我想看曲曲聊谁应该先联系餐厅处理的原片。",
+      "host": "ququ",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1WQeCzNEau",
+          "host": "曲曲",
+          "title": "恋爱情感经历比较少的女生如何在相亲的时候提升对方的好感度？1.外表好看2.对人友善3.初次见面时主动买小单或者提出AA.#AA #相亲记 #恋爱小技巧",
+          "url": "https://www.bilibili.com/video/BV1WQeCzNEau/",
+          "start_seconds": 261.26,
+          "end_seconds": 273.26,
+          "situation": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。",
+          "move": "举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "summary": "观点分享讨论第一次约会各自付账之后，怎么判断对方是否愿意继续接触。举例看对方接受AA后，有没有主动提到下次一起吃饭。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1WQeCzNEau/?t=261",
+          "score": 14.598534,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 4064,
+      "prompt_sha256": "99b00484d61d2b7d41a4c50c81c0492f833cc1df19644ecdd762c4a77c959a51",
+      "selection": null,
+      "displayed_reply": "第一次约会就碰上过敏，两个人还都去了医院，确实够折腾的。我手头没有曲曲聊这种情况下谁先联系餐厅的原片。就这件事，你们可以先商量由谁出面，谁手上有订单、也方便沟通，谁就先联系，请餐厅核对当晚菜品的配料和制作过程。两个人各自把就医记录和票据留好就行。",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22351,
+            "cached_input_tokens": 18048,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 120,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 6.08,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "fan-added",
+      "question": "线上认识的人只看过我的社交资料和照片，线下朋友却会从我平时的圈子认识我。有没有梵公子聊第一印象随认识渠道变化的原片？",
+      "host": "fan",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1EdXsBiEfd",
+          "host": "梵公子社会学",
+          "title": "现实社交识人辨人就是三秒完播率｜形象符合 + 强者背书，才是不被淘汰的核心｜真正厉害的人，看你能否撕裂舒适区｜能写会算，才是中式社交制胜法宝",
+          "url": "https://www.bilibili.com/video/BV1EdXsBiEfd/",
+          "start_seconds": 165.84,
+          "end_seconds": 186.24,
+          "situation": "观点分享讨论初次认识时，线上个人资料和线下场景分别传递哪些印象。",
+          "move": "把信息按认识渠道分开，举例区分照片呈现和现实圈子、工作背景。",
+          "summary": "观点分享讨论初次认识时，线上个人资料和线下场景分别传递哪些印象。把信息按认识渠道分开，举例区分照片呈现和现实圈子、工作背景。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165",
+          "score": 52.540724,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 4064,
+      "prompt_sha256": "6920a3bb80be3a7fd850c51f0e71c5028616d7659de5b304ef198c707037c2bc",
+      "selection": "bili-BV1EdXsBiEfd",
+      "displayed_reply": "有一段梵公子本人账号发的观点分享，跟你说的挺像：线上认识你的人，第一印象可能主要来自照片和个人资料；线下认识你的人，还会从你平时的圈子和相处方式来了解你。这个片段聊的就是，认识渠道不同，别人最先看到的也会是你不同的一面。\n\n[看观点片段 02:45](https://www.bilibili.com/video/BV1EdXsBiEfd/?t=165)",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 22366,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 111,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.71,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "fixture": "guolu-related-no-match",
+      "question": "最近婆婆在家跌倒，保险公司说跌倒因为另一种病不理赔。我想看郭律具体聊养老保险理赔条款的原片。",
+      "host": "guolu",
+      "with_retrieval": true,
+      "retrieved": [
+        {
+          "source_id": "bili-BV1qmxe6bEug",
+          "host": "郭延娇",
+          "title": "连麦5: 婆婆当面数落、9岁孩子也敢指责妈妈——郭老师：你现在受婆婆的气，将来受孩子的气，因为没人尊重你",
+          "url": "https://www.bilibili.com/video/BV1qmxe6bEug/",
+          "start_seconds": 33.12,
+          "end_seconds": 59.6,
+          "situation": "来访者说婆媳关系总体不错，但最近常被婆婆当面数落。",
+          "move": "先问具体哪里出了问题，再核对是否同住、平时多久见一次，把笼统的关系判断落到接触场景。",
+          "summary": "来访者说婆媳关系总体不错，但最近常被婆婆当面数落。先问具体哪里出了问题，再核对是否同住、平时多久见一次，把笼统的关系判断落到接触场景。",
+          "timestamp_url": "https://www.bilibili.com/video/BV1qmxe6bEug/?t=33",
+          "score": 10.534095,
+          "review_status": "machine_asr_pending_review"
+        }
+      ],
+      "material_characters": 4064,
+      "prompt_sha256": "45fdaff13d35aa6fd38ce67f4a600e885e544efadaade2a66e1ba24c424a392d",
+      "selection": null,
+      "displayed_reply": "婆婆摔倒了，还得弄清楚保险公司为什么拒赔，确实挺烦心的。我手头没有郭律具体讲养老保险理赔条款的原片。保险公司有给你们书面的拒赔说明，写明他们认定跌倒与哪种病有关、依据的是保单哪一条吗？",
+      "inference": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 23416,
+            "cached_input_tokens": 19328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0
+          },
+          "elapsed_seconds": 5.58,
+          "tool_events": [],
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}
