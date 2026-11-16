@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "yuelao-cases",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Chinese relationship conversations with selectable approaches and source-linked case retrieval.",
   "author": {"name": "Arthur"},
   "extensions": {

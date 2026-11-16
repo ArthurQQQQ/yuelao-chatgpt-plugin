@@ -25,6 +25,6 @@ description: 用于中文月老式连麦、相亲或亲密关系梳理，支持�
 
 ## 试聊反馈
 
-用户说聊完了、想给反馈、或问哪里可以反馈时，给一次 [给作者反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.3.0)。已选聊法时可在链接末尾加 `&host=` 和当前主播 ID，限 `aoye`、`tianshu`、`laolin`、`tong`、`ququ`、`jiege`、`fan`、`guolu`。用户已经在聊一个新问题时继续接话。
+用户说聊完了、想给反馈、或问哪里可以反馈时，给一次 [给作者反馈](https://yuelao-trial-feedback.arthurqiu50.chatgpt.site/?version=0.3.1)。已选聊法时可在链接末尾加 `&host=` 和当前主播 ID，限 `aoye`、`tianshu`、`laolin`、`tong`、`ququ`、`jiege`、`fan`、`guolu`。用户已经在聊一个新问题时继续接话。
 
 反馈页先选「像真人 / 有点假 / 有的像」，可点出哪一轮、哪里不像或希望怎么改。用户自己选择要分享的几句话，可先编辑，再点击「提交反馈」。链接参数只填版本和主播 ID。

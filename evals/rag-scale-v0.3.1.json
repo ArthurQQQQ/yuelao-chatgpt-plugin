@@ -1,0 +1,145 @@
+{
+  "scope": "Synthetic FTS workload plus deploy snapshot, local Python only; no quality or hosted SLA claims.",
+  "synthetic_cards_per_host": 1000,
+  "synthetic_cards": 8000,
+  "index_bytes": 8802304,
+  "checks": [
+    {
+      "host": "aoye",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "aoye",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "aoye",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "tianshu",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "tianshu",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "tianshu",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "laolin",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "laolin",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "laolin",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "ququ",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "ququ",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "ququ",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "tong",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "tong",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "tong",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "jiege",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "jiege",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "jiege",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "fan",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "fan",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "fan",
+      "mode": "unrelated",
+      "passed": true
+    },
+    {
+      "host": "guolu",
+      "mode": "targeted",
+      "passed": true
+    },
+    {
+      "host": "guolu",
+      "mode": "common",
+      "passed": true
+    },
+    {
+      "host": "guolu",
+      "mode": "unrelated",
+      "passed": true
+    }
+  ],
+  "timing_ms": {
+    "targeted": {
+      "p50": 15.7,
+      "p95": 16.52,
+      "calls": 40
+    },
+    "common": {
+      "p50": 8.64,
+      "p95": 9.2,
+      "calls": 40
+    },
+    "unrelated": {
+      "p50": 0.49,
+      "p95": 0.73,
+      "calls": 40
+    }
+  }
+}
